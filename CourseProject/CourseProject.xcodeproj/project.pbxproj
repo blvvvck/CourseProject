@@ -24,6 +24,19 @@
 		9501012D2080072D007EE398 /* AlertFactoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501012C2080072D007EE398 /* AlertFactoryImplementation.swift */; };
 		9501012F208007D7007EE398 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501012E208007D7007EE398 /* SettingsConfigurator.swift */; };
 		95010131208007E4007EE398 /* SettingsInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95010130208007E4007EE398 /* SettingsInitializer.swift */; };
+		9501013B20808CF5007EE398 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501013A20808CF5007EE398 /* CellModel.swift */; };
+		9501013D20808D05007EE398 /* CellModelImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501013C20808D05007EE398 /* CellModelImplementation.swift */; };
+		9501014320808E75007EE398 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501014120808E75007EE398 /* StudentTableViewCell.swift */; };
+		9501014420808E75007EE398 /* StudentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9501014220808E75007EE398 /* StudentTableViewCell.xib */; };
+		9501014620809087007EE398 /* StudentsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501014520809087007EE398 /* StudentsDataSource.swift */; };
+		95010149208090A8007EE398 /* StudentsDataSourceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95010148208090A8007EE398 /* StudentsDataSourceInput.swift */; };
+		9501014F20809213007EE398 /* CourseViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501014E20809213007EE398 /* CourseViewInput.swift */; };
+		950101512080921C007EE398 /* CourseViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950101502080921C007EE398 /* CourseViewOutput.swift */; };
+		9501015320809224007EE398 /* CoursePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501015220809224007EE398 /* CoursePresenter.swift */; };
+		950101552080922D007EE398 /* CourseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950101542080922D007EE398 /* CourseInteractor.swift */; };
+		9501015720809236007EE398 /* CourseInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501015620809236007EE398 /* CourseInteractorInput.swift */; };
+		9501015920809242007EE398 /* CourseInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501015820809242007EE398 /* CourseInteractorOutput.swift */; };
+		9501015B208092C5007EE398 /* FirstCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501015A208092C4007EE398 /* FirstCourseViewController.swift */; };
 		955ACD6F207EBEEF006F7F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955ACD6E207EBEEF006F7F26 /* AppDelegate.swift */; };
 		955ACD71207EBEEF006F7F26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955ACD70207EBEEF006F7F26 /* ViewController.swift */; };
 		955ACD74207EBEEF006F7F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955ACD72207EBEEF006F7F26 /* Main.storyboard */; };
@@ -51,6 +64,19 @@
 		9501012C2080072D007EE398 /* AlertFactoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactoryImplementation.swift; sourceTree = "<group>"; };
 		9501012E208007D7007EE398 /* SettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
 		95010130208007E4007EE398 /* SettingsInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInitializer.swift; sourceTree = "<group>"; };
+		9501013A20808CF5007EE398 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		9501013C20808D05007EE398 /* CellModelImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModelImplementation.swift; sourceTree = "<group>"; };
+		9501014120808E75007EE398 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
+		9501014220808E75007EE398 /* StudentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentTableViewCell.xib; sourceTree = "<group>"; };
+		9501014520809087007EE398 /* StudentsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsDataSource.swift; sourceTree = "<group>"; };
+		95010148208090A8007EE398 /* StudentsDataSourceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsDataSourceInput.swift; sourceTree = "<group>"; };
+		9501014E20809213007EE398 /* CourseViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewInput.swift; sourceTree = "<group>"; };
+		950101502080921C007EE398 /* CourseViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewOutput.swift; sourceTree = "<group>"; };
+		9501015220809224007EE398 /* CoursePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePresenter.swift; sourceTree = "<group>"; };
+		950101542080922D007EE398 /* CourseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInteractor.swift; sourceTree = "<group>"; };
+		9501015620809236007EE398 /* CourseInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInteractorInput.swift; sourceTree = "<group>"; };
+		9501015820809242007EE398 /* CourseInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInteractorOutput.swift; sourceTree = "<group>"; };
+		9501015A208092C4007EE398 /* FirstCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCourseViewController.swift; sourceTree = "<group>"; };
 		955ACD6B207EBEEF006F7F26 /* CourseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955ACD6E207EBEEF006F7F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		955ACD70207EBEEF006F7F26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -168,8 +194,8 @@
 		9501011E208002DC007EE398 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9501013820808CD5007EE398 /* Models */,
 				9501012920800716007EE398 /* AlertFactory */,
-				9501011F208002EC007EE398 /* SettingsModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -186,6 +212,7 @@
 		950101322080098F007EE398 /* SecondCourse */ = {
 			isa = PBXGroup;
 			children = (
+				9501013E20808E33007EE398 /* TableView */,
 				95010137208009BC007EE398 /* Configurator */,
 				95010136208009B2007EE398 /* Router */,
 				95010135208009AC007EE398 /* Interactor */,
@@ -198,6 +225,9 @@
 		95010133208009A2007EE398 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9501014E20809213007EE398 /* CourseViewInput.swift */,
+				950101502080921C007EE398 /* CourseViewOutput.swift */,
+				9501015A208092C4007EE398 /* FirstCourseViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +235,7 @@
 		95010134208009A7007EE398 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				9501015220809224007EE398 /* CoursePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -212,6 +243,9 @@
 		95010135208009AC007EE398 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				950101542080922D007EE398 /* CourseInteractor.swift */,
+				9501015620809236007EE398 /* CourseInteractorInput.swift */,
+				9501015820809242007EE398 /* CourseInteractorOutput.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -228,6 +262,51 @@
 			children = (
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		9501013820808CD5007EE398 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9501013920808CE7007EE398 /* CellModel */,
+				9501011F208002EC007EE398 /* SettingsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9501013920808CE7007EE398 /* CellModel */ = {
+			isa = PBXGroup;
+			children = (
+				9501013A20808CF5007EE398 /* CellModel.swift */,
+				9501013C20808D05007EE398 /* CellModelImplementation.swift */,
+			);
+			path = CellModel;
+			sourceTree = "<group>";
+		};
+		9501013E20808E33007EE398 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				9501014020808E4D007EE398 /* DataSource */,
+				9501013F20808E39007EE398 /* Cell */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		9501013F20808E39007EE398 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9501014120808E75007EE398 /* StudentTableViewCell.swift */,
+				9501014220808E75007EE398 /* StudentTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9501014020808E4D007EE398 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				9501014520809087007EE398 /* StudentsDataSource.swift */,
+				95010148208090A8007EE398 /* StudentsDataSourceInput.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		955ACD62207EBEEF006F7F26 = {
@@ -337,6 +416,7 @@
 				955ACD79207EBEEF006F7F26 /* LaunchScreen.storyboard in Resources */,
 				955ACD76207EBEEF006F7F26 /* Assets.xcassets in Resources */,
 				955ACD74207EBEEF006F7F26 /* Main.storyboard in Resources */,
+				9501014420808E75007EE398 /* StudentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,23 +494,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9501014620809087007EE398 /* StudentsDataSource.swift in Sources */,
 				955ACD71207EBEEF006F7F26 /* ViewController.swift in Sources */,
+				9501015920809242007EE398 /* CourseInteractorOutput.swift in Sources */,
+				950101512080921C007EE398 /* CourseViewOutput.swift in Sources */,
 				95010126208006E7007EE398 /* SettingsRouterInput.swift in Sources */,
 				9501012D2080072D007EE398 /* AlertFactoryImplementation.swift in Sources */,
 				955ACD6F207EBEEF006F7F26 /* AppDelegate.swift in Sources */,
 				95010128208006EE007EE398 /* SettingsRouter.swift in Sources */,
 				95010109207FF404007EE398 /* SettingsViewController.swift in Sources */,
+				950101552080922D007EE398 /* CourseInteractor.swift in Sources */,
 				95010114207FF637007EE398 /* SettingsInteractor.swift in Sources */,
 				95010116207FF642007EE398 /* SettingsInteractorInput.swift in Sources */,
 				9501012220800343007EE398 /* DbManager.swift in Sources */,
 				95010118207FF64D007EE398 /* SettingsInteractorOutput.swift in Sources */,
 				95010120208002EC007EE398 /* SettingsModel.swift in Sources */,
+				95010149208090A8007EE398 /* StudentsDataSourceInput.swift in Sources */,
+				9501014F20809213007EE398 /* CourseViewInput.swift in Sources */,
+				9501015720809236007EE398 /* CourseInteractorInput.swift in Sources */,
+				9501015B208092C5007EE398 /* FirstCourseViewController.swift in Sources */,
+				9501014320808E75007EE398 /* StudentTableViewCell.swift in Sources */,
 				9501011C207FF65F007EE398 /* SettingsViewOutput.swift in Sources */,
 				9501012B20800722007EE398 /* AlertFactory.swift in Sources */,
 				9501011A207FF656007EE398 /* SettingsViewInput.swift in Sources */,
 				95010112207FF630007EE398 /* SettingsPresenter.swift in Sources */,
+				9501013D20808D05007EE398 /* CellModelImplementation.swift in Sources */,
+				9501015320809224007EE398 /* CoursePresenter.swift in Sources */,
 				95010131208007E4007EE398 /* SettingsInitializer.swift in Sources */,
 				950101242080034D007EE398 /* DbManagerImplementation.swift in Sources */,
+				9501013B20808CF5007EE398 /* CellModel.swift in Sources */,
 				9501012F208007D7007EE398 /* SettingsConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
