@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol CourseInteractorOutput {
+protocol CourseInteractorOutput:class {
     
+    func didFinishGetStudents(with models: [CellModelImplementation])
 }

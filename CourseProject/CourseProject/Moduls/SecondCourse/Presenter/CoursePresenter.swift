@@ -8,6 +8,18 @@
 
 import Foundation
 
-class CoursePresenter {
+class CoursePresenter: CourseViewOutput, CourseInteractorOutput {
+  
+    weak var view: CourseViewInput!
+    var interactor: CourseInteractorInput!
+    
+    func viewIsReady(with course: String) {
+        view.prepareTableView()
+        interactor.getStudentsByCourse(with: course)
+    }
+    
+    func didFinishGetStudents(with models: [CellModelImplementation]) {
+        view.set(cellModels: models)
+    }
     
 }

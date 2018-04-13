@@ -8,7 +8,9 @@
 
 import Foundation
 
-protocol CourseViewInput {
+protocol CourseViewInput: class {
     
-    
+    func prepareTableView()
+    func reloadTableView()
+    func set(cellModels: [CellModel]?)
 }

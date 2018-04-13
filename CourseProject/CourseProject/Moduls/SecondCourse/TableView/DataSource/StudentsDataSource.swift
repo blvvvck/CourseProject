@@ -14,8 +14,9 @@ class StudentsDataSource: NSObject, StudentsDataSourceInput {
     var cellModels = [CellModel]()
     let studentCellIdentifier = "studentCell"
     
-    func setCellModels(with models: [CellModel]) {
-        cellModels = models
+    func setCellModels(with models: [CellModel]?) {
+        guard let checkedModels = models else { return }
+        cellModels = checkedModels
     }
     
     func clearTable() {

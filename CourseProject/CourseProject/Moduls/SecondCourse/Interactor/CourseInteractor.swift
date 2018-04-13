@@ -9,6 +9,19 @@
 import Foundation
 
 class CourseInteractor: CourseInteractorInput {
-    
-    
+
+    var presenter: CourseInteractorOutput!
+    var tableParser: GoogleTableParserManager!
+   
+    func getStudentsByCourse(with course: String) {
+        var cellModels = [CellModelImplementation]()
+        let students = tableParser.getStudentByCourse(with: course)
+        if let studentsCheked = students {
+            for student in studentsCheked {
+                let cellModel = CellModelImplementation(name: student.name, group: student.group, theme: student.theme, course: student.course, email: student.email)
+                cellModels.append(cellModel)
+            }
+            presenter.didFinishGetStudents(with: cellModels)
+        }
+    }
 }

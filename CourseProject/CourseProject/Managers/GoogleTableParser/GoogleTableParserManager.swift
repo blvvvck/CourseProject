@@ -1,5 +1,5 @@
 //
-//  CourseInteractorInput.swift
+//  GoogleTableParserManager.swift
 //  CourseProject
 //
 //  Created by BLVCK on 13/04/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CourseInteractorInput {
+protocol GoogleTableParserManager {
     
-    func getStudentsByCourse(with course: String)
+    func getStudentByCourse(with course: String) -> [StudentModel]?
 }

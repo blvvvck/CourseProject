@@ -11,6 +11,6 @@ import UIKit
 
 protocol StudentsDataSourceInput: UITableViewDelegate, UITableViewDataSource {
     
-    func setCellModels(with models: [CellModel])
+    func setCellModels(with models: [CellModel]?)
     func clearTable()
 }

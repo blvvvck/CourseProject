@@ -10,5 +10,6 @@ import Foundation
 
 protocol CourseViewOutput {
     
+    func viewIsReady(with course: String)
     
 }

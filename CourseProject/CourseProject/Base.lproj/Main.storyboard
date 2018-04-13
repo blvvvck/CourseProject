@@ -162,7 +162,7 @@
             </objects>
             <point key="canvasLocation" x="1415.625" y="1534.8591549295775"/>
         </scene>
-        <!--1 курс-->
+        <!--View Controller-->
         <scene sceneID="6QZ-aT-ee3">
             <objects>
                 <viewController id="Atf-Uq-agA" customClass="FirstCourseViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -190,6 +190,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbn-6L-BcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="c9B-3h-HJ6" customClass="FirstCourseInitializer" customModule="CourseProject" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="Atf-Uq-agA" id="wR1-OB-5Ic"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1411.875" y="-733.09859154929575"/>
         </scene>

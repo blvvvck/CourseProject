@@ -69,6 +69,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
             //self.signInButton.isHidden = true
             self.output.isHidden = false
             self.service.authorizer = user.authentication.fetcherAuthorizer()
+            user.authentication
             listMajors()
 //            var courseFirst = [ResultStruct]()
 //
