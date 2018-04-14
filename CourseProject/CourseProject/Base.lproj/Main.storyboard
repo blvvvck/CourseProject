@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="-335.625" y="89.788732394366193"/>
         </scene>
-        <!--2 курс-->
+        <!--View Controlelr-->
         <scene sceneID="MvL-vB-axo">
             <objects>
-                <viewController id="h1M-O6-iIQ" sceneMemberID="viewController">
+                <viewController id="h1M-O6-iIQ" customClass="FirstCourseViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zl0-Px-Y8Q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,8 +49,13 @@
                     <tabBarItem key="tabBarItem" title="2 курс" id="30m-0V-JNf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J79-S0-Dgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="keM-XF-mVJ" customClass="ThirdCourseInitializer" customModule="CourseProject" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewControlelr" destination="h1M-O6-iIQ" id="9B5-wA-Mf6"/>
+                    </connections>
+                </customObject>
             </objects>
-            <point key="canvasLocation" x="1412" y="90"/>
+            <point key="canvasLocation" x="1411.875" y="89.788732394366193"/>
         </scene>
         <!--3 курс-->
         <scene sceneID="xFr-P0-NyH">

@@ -11,4 +11,5 @@ import Foundation
 protocol SettingsInteractorOutput: class {
     
     func didFinishLoadSettings(with settingsModel: SettingsModel)
+    //func didFinish(completionBlock: @escaping (([SettingsModel]?) -> ()))
 }

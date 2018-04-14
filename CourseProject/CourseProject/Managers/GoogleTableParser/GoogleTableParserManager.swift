@@ -10,5 +10,5 @@ import Foundation
 
 protocol GoogleTableParserManager {
     
-    func getStudentByCourse(with course: String) -> [StudentModel]?
+    func getStudentByCourse(with course: String, and completionBlock: @escaping ([StudentModel]?) -> ())
 }

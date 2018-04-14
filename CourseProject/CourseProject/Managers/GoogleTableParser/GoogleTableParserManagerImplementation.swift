@@ -8,6 +8,7 @@
 
 import Foundation
 import GoogleAPIClientForREST
+import GoogleSignIn
 
 class GoogleTableParserManagerImplementation: GoogleTableParserManager {
    
@@ -16,9 +17,12 @@ class GoogleTableParserManagerImplementation: GoogleTableParserManager {
     var dbManager: DbManager!
     var students = [StudentModel]()
     
-    func getStudentByCourse(with course: String) -> [StudentModel]? {
-        //надо авторизоваться
-        guard let settings = dbManager.getDataFromDB() else { return nil }
+    func getStudentByCourse(with course: String, and completionBlock: @escaping ([StudentModel]?) -> ()) {
+    
+        let user = GIDSignIn.sharedInstance().currentUser
+        self.service.authorizer = user?.authentication.fetcherAuthorizer()
+
+        guard let settings = dbManager.getDataFromDB() else { return }
         let spreadsheetId = settings.link
         let range = settings.range
         let query = GTLRSheetsQuery_SpreadsheetsValuesGet.query(withSpreadsheetId: spreadsheetId, range: range)
@@ -40,8 +44,8 @@ class GoogleTableParserManagerImplementation: GoogleTableParserManager {
                     }
                     print(student)
                 }
+                completionBlock(strongSelf.students)
             }
         }
-        return students
     }
 }

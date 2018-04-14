@@ -16,6 +16,7 @@ class SettingsInteractor: SettingsInteractorInput {
     func loadSettings() {
         if let settingsModel = dbManager.getDataFromDB() {
             presenter.didFinishLoadSettings(with: settingsModel)
+            
         } else {
             presenter.didFinishLoadSettings(with: dbManager.getDefaultDataFromDB())
         }

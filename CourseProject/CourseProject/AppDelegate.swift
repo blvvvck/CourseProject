@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         GIDSignIn.sharedInstance().clientID = "986855244295-f3128ajn936ejbdv7n6senv6bian7dor.apps.googleusercontent.com"
-        
+        //UserDefaults.standard.setValue(GIDSignIn.sharedInstance().currentUser, forKey: "currentUser") 
         return true
     }
     

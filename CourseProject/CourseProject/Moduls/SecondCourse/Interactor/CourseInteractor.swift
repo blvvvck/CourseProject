@@ -9,19 +9,23 @@
 import Foundation
 
 class CourseInteractor: CourseInteractorInput {
+    
 
     var presenter: CourseInteractorOutput!
     var tableParser: GoogleTableParserManager!
    
     func getStudentsByCourse(with course: String) {
         var cellModels = [CellModelImplementation]()
-        let students = tableParser.getStudentByCourse(with: course)
-        if let studentsCheked = students {
-            for student in studentsCheked {
-                let cellModel = CellModelImplementation(name: student.name, group: student.group, theme: student.theme, course: student.course, email: student.email)
-                cellModels.append(cellModel)
+        //let students = tableParser.getStudentByCourse(with: course)
+        tableParser.getStudentByCourse(with: course) { (students) in
+            if let studentsCheked = students {
+                for student in studentsCheked {
+                    let cellModel = CellModelImplementation(name: student.name, group: student.group, theme: student.theme, course: student.course, email: student.email)
+                    cellModels.append(cellModel)
+                }
+                self.presenter.didFinishGetStudents(with: cellModels)
             }
-            presenter.didFinishGetStudents(with: cellModels)
+
         }
     }
 }

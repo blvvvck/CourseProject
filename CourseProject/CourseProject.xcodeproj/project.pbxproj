@@ -42,6 +42,8 @@
 		9501016D2081410C007EE398 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501016C2081410C007EE398 /* StudentModel.swift */; };
 		9501016F20814B9C007EE398 /* FirstCourseInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501016E20814B9C007EE398 /* FirstCourseInitializer.swift */; };
 		9501017120814BAD007EE398 /* FirstCourseConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501017020814BAD007EE398 /* FirstCourseConfigurator.swift */; };
+		9501017920822A74007EE398 /* ThirdCourseInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501017820822A74007EE398 /* ThirdCourseInitializer.swift */; };
+		9501017B20822A80007EE398 /* ThirdCourseConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501017A20822A80007EE398 /* ThirdCourseConfigurator.swift */; };
 		955ACD6F207EBEEF006F7F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955ACD6E207EBEEF006F7F26 /* AppDelegate.swift */; };
 		955ACD71207EBEEF006F7F26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955ACD70207EBEEF006F7F26 /* ViewController.swift */; };
 		955ACD74207EBEEF006F7F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955ACD72207EBEEF006F7F26 /* Main.storyboard */; };
@@ -87,6 +89,8 @@
 		9501016C2081410C007EE398 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		9501016E20814B9C007EE398 /* FirstCourseInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCourseInitializer.swift; sourceTree = "<group>"; };
 		9501017020814BAD007EE398 /* FirstCourseConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCourseConfigurator.swift; sourceTree = "<group>"; };
+		9501017820822A74007EE398 /* ThirdCourseInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCourseInitializer.swift; sourceTree = "<group>"; };
+		9501017A20822A80007EE398 /* ThirdCourseConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCourseConfigurator.swift; sourceTree = "<group>"; };
 		955ACD6B207EBEEF006F7F26 /* CourseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955ACD6E207EBEEF006F7F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		955ACD70207EBEEF006F7F26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 		95010105207FEE24007EE398 /* Moduls */ = {
 			isa = PBXGroup;
 			children = (
+				95010173208229A5007EE398 /* ThirdCourse */,
 				950101322080098F007EE398 /* SecondCourse */,
 				95010107207FF325007EE398 /* Settings */,
 				95010106207FEE47007EE398 /* SignIn */,
@@ -348,6 +353,31 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		95010173208229A5007EE398 /* ThirdCourse */ = {
+			isa = PBXGroup;
+			children = (
+				9501017720822A45007EE398 /* Configurator */,
+				9501017420822A0F007EE398 /* View */,
+			);
+			path = ThirdCourse;
+			sourceTree = "<group>";
+		};
+		9501017420822A0F007EE398 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9501017720822A45007EE398 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				9501017820822A74007EE398 /* ThirdCourseInitializer.swift */,
+				9501017A20822A80007EE398 /* ThirdCourseConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		955ACD62207EBEEF006F7F26 = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +570,7 @@
 				9501016D2081410C007EE398 /* StudentModel.swift in Sources */,
 				95010126208006E7007EE398 /* SettingsRouterInput.swift in Sources */,
 				9501012D2080072D007EE398 /* AlertFactoryImplementation.swift in Sources */,
+				9501017B20822A80007EE398 /* ThirdCourseConfigurator.swift in Sources */,
 				955ACD6F207EBEEF006F7F26 /* AppDelegate.swift in Sources */,
 				95010128208006EE007EE398 /* SettingsRouter.swift in Sources */,
 				95010109207FF404007EE398 /* SettingsViewController.swift in Sources */,
@@ -567,6 +598,7 @@
 				9501016F20814B9C007EE398 /* FirstCourseInitializer.swift in Sources */,
 				950101242080034D007EE398 /* DbManagerImplementation.swift in Sources */,
 				9501013B20808CF5007EE398 /* CellModel.swift in Sources */,
+				9501017920822A74007EE398 /* ThirdCourseInitializer.swift in Sources */,
 				9501012F208007D7007EE398 /* SettingsConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

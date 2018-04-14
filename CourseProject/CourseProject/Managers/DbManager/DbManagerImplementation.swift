@@ -32,7 +32,7 @@ class DbManagerImplementation: DbManager {
                 currentSettings.mentor = object.mentor
                 currentSettings.link = object.link
                 currentSettings.sheetName = object.sheetName
-                currentSettings.range = object.sheetName
+                currentSettings.range = object.range
             }
         } else {
             try! database.write {
