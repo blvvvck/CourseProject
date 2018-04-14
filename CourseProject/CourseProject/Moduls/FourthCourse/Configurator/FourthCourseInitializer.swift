@@ -1,5 +1,5 @@
 //
-//  ThirdCourseInitializer.swift
+//  FourthCourseInitializer.swift
 //  CourseProject
 //
 //  Created by BLVCK on 14/04/2018.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ThirdCourseInitializer: NSObject {
-
+class FourthCourseInitializer: NSObject {
     
     @IBOutlet weak var viewController: FirstCourseViewController!
     
     override func awakeFromNib() {
         
-        let _ = ThirdCourseConfigurator.setupModule(with: viewController)
+        let _ = FourthCourseConfigurator.setupModule(with: viewController)
     }
 }

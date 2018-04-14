@@ -1,22 +1,22 @@
 //
-//  FirstCourseConfigurator.swift
+//  FourthCourseConfigurator.swift
 //  CourseProject
 //
-//  Created by BLVCK on 13/04/2018.
+//  Created by BLVCK on 14/04/2018.
 //  Copyright © 2018 BLVCK. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class FirstCourseConfigurator {
+class FourthCourseConfigurator {
     
-    static let studentCourse = "2"
+    static let studentCourse = "4"
     
     static func setupModule(with viewController: FirstCourseViewController) {
-
+        
         viewController.studentCourse = studentCourse
-        var tableView = UITableView()
+        let tableView = UITableView()
         viewController.tableView = tableView
         
         let presenter = CoursePresenter()

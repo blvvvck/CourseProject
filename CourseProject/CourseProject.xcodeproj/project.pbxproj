@@ -44,6 +44,8 @@
 		9501017120814BAD007EE398 /* FirstCourseConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501017020814BAD007EE398 /* FirstCourseConfigurator.swift */; };
 		9501017920822A74007EE398 /* ThirdCourseInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501017820822A74007EE398 /* ThirdCourseInitializer.swift */; };
 		9501017B20822A80007EE398 /* ThirdCourseConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501017A20822A80007EE398 /* ThirdCourseConfigurator.swift */; };
+		9501018020823195007EE398 /* FourthCourseInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501017F20823195007EE398 /* FourthCourseInitializer.swift */; };
+		95010182208231A0007EE398 /* FourthCourseConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95010181208231A0007EE398 /* FourthCourseConfigurator.swift */; };
 		955ACD6F207EBEEF006F7F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955ACD6E207EBEEF006F7F26 /* AppDelegate.swift */; };
 		955ACD71207EBEEF006F7F26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955ACD70207EBEEF006F7F26 /* ViewController.swift */; };
 		955ACD74207EBEEF006F7F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955ACD72207EBEEF006F7F26 /* Main.storyboard */; };
@@ -91,6 +93,8 @@
 		9501017020814BAD007EE398 /* FirstCourseConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCourseConfigurator.swift; sourceTree = "<group>"; };
 		9501017820822A74007EE398 /* ThirdCourseInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCourseInitializer.swift; sourceTree = "<group>"; };
 		9501017A20822A80007EE398 /* ThirdCourseConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCourseConfigurator.swift; sourceTree = "<group>"; };
+		9501017F20823195007EE398 /* FourthCourseInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthCourseInitializer.swift; sourceTree = "<group>"; };
+		95010181208231A0007EE398 /* FourthCourseConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthCourseConfigurator.swift; sourceTree = "<group>"; };
 		955ACD6B207EBEEF006F7F26 /* CourseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955ACD6E207EBEEF006F7F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		955ACD70207EBEEF006F7F26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		95010105207FEE24007EE398 /* Moduls */ = {
 			isa = PBXGroup;
 			children = (
+				9501017D20823121007EE398 /* FourthCourse */,
 				95010173208229A5007EE398 /* ThirdCourse */,
 				950101322080098F007EE398 /* SecondCourse */,
 				95010107207FF325007EE398 /* Settings */,
@@ -357,16 +362,8 @@
 			isa = PBXGroup;
 			children = (
 				9501017720822A45007EE398 /* Configurator */,
-				9501017420822A0F007EE398 /* View */,
 			);
 			path = ThirdCourse;
-			sourceTree = "<group>";
-		};
-		9501017420822A0F007EE398 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		9501017720822A45007EE398 /* Configurator */ = {
@@ -374,6 +371,23 @@
 			children = (
 				9501017820822A74007EE398 /* ThirdCourseInitializer.swift */,
 				9501017A20822A80007EE398 /* ThirdCourseConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		9501017D20823121007EE398 /* FourthCourse */ = {
+			isa = PBXGroup;
+			children = (
+				9501017E2082317C007EE398 /* Configurator */,
+			);
+			path = FourthCourse;
+			sourceTree = "<group>";
+		};
+		9501017E2082317C007EE398 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				9501017F20823195007EE398 /* FourthCourseInitializer.swift */,
+				95010181208231A0007EE398 /* FourthCourseConfigurator.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -589,6 +603,7 @@
 				9501012B20800722007EE398 /* AlertFactory.swift in Sources */,
 				9501011A207FF656007EE398 /* SettingsViewInput.swift in Sources */,
 				95010112207FF630007EE398 /* SettingsPresenter.swift in Sources */,
+				95010182208231A0007EE398 /* FourthCourseConfigurator.swift in Sources */,
 				9501013D20808D05007EE398 /* CellModelImplementation.swift in Sources */,
 				9501015320809224007EE398 /* CoursePresenter.swift in Sources */,
 				9501017120814BAD007EE398 /* FirstCourseConfigurator.swift in Sources */,
@@ -596,6 +611,7 @@
 				95010131208007E4007EE398 /* SettingsInitializer.swift in Sources */,
 				9501016720814006007EE398 /* GoogleTableParserManager.swift in Sources */,
 				9501016F20814B9C007EE398 /* FirstCourseInitializer.swift in Sources */,
+				9501018020823195007EE398 /* FourthCourseInitializer.swift in Sources */,
 				950101242080034D007EE398 /* DbManagerImplementation.swift in Sources */,
 				9501013B20808CF5007EE398 /* CellModel.swift in Sources */,
 				9501017920822A74007EE398 /* ThirdCourseInitializer.swift in Sources */,

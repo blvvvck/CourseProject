@@ -10,13 +10,14 @@ import UIKit
 
 class FirstCourseViewController: UIViewController, CourseViewInput {    
     
-    @IBOutlet weak var tableView: UITableView!
+
     var dataSource: StudentsDataSource!
     var presenter: CourseViewOutput!
     let studentCellNibIdentifier = "StudentTableViewCell"
     let studentCellIdentifier = "studentCell"
     let estimatedRowHeight: CGFloat = 100
     var studentCourse: String = "2"
+    var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,8 @@ class FirstCourseViewController: UIViewController, CourseViewInput {
     }
     
     func prepareTableView() {
+        tableView.frame = CGRect(x: 0, y: 0, width: 320, height: 568)
+        self.view.addSubview(tableView)
         registerCell()
         tableView.estimatedRowHeight = estimatedRowHeight
         tableView.rowHeight = UITableViewAutomaticDimension

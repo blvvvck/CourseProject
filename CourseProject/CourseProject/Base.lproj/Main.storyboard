@@ -36,7 +36,7 @@
             </objects>
             <point key="canvasLocation" x="-335.625" y="89.788732394366193"/>
         </scene>
-        <!--View Controlelr-->
+        <!--View Controller-->
         <scene sceneID="MvL-vB-axo">
             <objects>
                 <viewController id="h1M-O6-iIQ" customClass="FirstCourseViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,30 +46,35 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="z3t-Hs-AyN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="2 курс" id="30m-0V-JNf"/>
+                    <tabBarItem key="tabBarItem" title="3 курс" id="30m-0V-JNf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J79-S0-Dgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="keM-XF-mVJ" customClass="ThirdCourseInitializer" customModule="CourseProject" customModuleProvider="target">
                     <connections>
-                        <outlet property="viewControlelr" destination="h1M-O6-iIQ" id="9B5-wA-Mf6"/>
+                        <outlet property="viewController" destination="h1M-O6-iIQ" id="TS2-vl-fHd"/>
                     </connections>
                 </customObject>
             </objects>
             <point key="canvasLocation" x="1411.875" y="89.788732394366193"/>
         </scene>
-        <!--3 курс-->
+        <!--View Controller-->
         <scene sceneID="xFr-P0-NyH">
             <objects>
-                <viewController id="EH6-WV-DI6" sceneMemberID="viewController">
+                <viewController id="EH6-WV-DI6" customClass="FirstCourseViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Znn-S8-3s6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wGu-B9-RDZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="3 курс" id="Ft5-mU-kXb"/>
+                    <tabBarItem key="tabBarItem" title="4 курс" id="Ft5-mU-kXb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkM-QT-sIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="dqk-nx-hQa" customClass="FourthCourseInitializer" customModule="CourseProject" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="EH6-WV-DI6" id="KLZ-3Z-ql2"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1412" y="853"/>
         </scene>
@@ -174,25 +179,10 @@
                     <view key="view" contentMode="scaleToFill" id="YwP-Hd-uKt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oat-Uf-epy">
-                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Oat-Uf-epy" firstAttribute="top" secondItem="fja-Dg-E4a" secondAttribute="top" id="5Kn-vy-ojU"/>
-                            <constraint firstItem="Oat-Uf-epy" firstAttribute="bottom" secondItem="fja-Dg-E4a" secondAttribute="bottom" id="K71-R0-DO8"/>
-                            <constraint firstItem="Oat-Uf-epy" firstAttribute="trailing" secondItem="fja-Dg-E4a" secondAttribute="trailing" id="hWe-XL-K6s"/>
-                            <constraint firstItem="Oat-Uf-epy" firstAttribute="leading" secondItem="fja-Dg-E4a" secondAttribute="leading" id="jrk-0U-c9r"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fja-Dg-E4a"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="1 курс" id="nX0-ws-fqc"/>
-                    <connections>
-                        <outlet property="tableView" destination="Oat-Uf-epy" id="eYT-ha-uoh"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="2 курс" id="nX0-ws-fqc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbn-6L-BcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="c9B-3h-HJ6" customClass="FirstCourseInitializer" customModule="CourseProject" customModuleProvider="target">
