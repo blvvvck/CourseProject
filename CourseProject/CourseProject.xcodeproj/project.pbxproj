@@ -46,6 +46,7 @@
 		9501017B20822A80007EE398 /* ThirdCourseConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501017A20822A80007EE398 /* ThirdCourseConfigurator.swift */; };
 		9501018020823195007EE398 /* FourthCourseInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501017F20823195007EE398 /* FourthCourseInitializer.swift */; };
 		95010182208231A0007EE398 /* FourthCourseConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95010181208231A0007EE398 /* FourthCourseConfigurator.swift */; };
+		953D3DA320853A5700EC57B5 /* DetailReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953D3DA220853A5700EC57B5 /* DetailReviewViewController.swift */; };
 		955ACD6F207EBEEF006F7F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955ACD6E207EBEEF006F7F26 /* AppDelegate.swift */; };
 		955ACD71207EBEEF006F7F26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955ACD70207EBEEF006F7F26 /* ViewController.swift */; };
 		955ACD74207EBEEF006F7F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955ACD72207EBEEF006F7F26 /* Main.storyboard */; };
@@ -95,6 +96,7 @@
 		9501017A20822A80007EE398 /* ThirdCourseConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCourseConfigurator.swift; sourceTree = "<group>"; };
 		9501017F20823195007EE398 /* FourthCourseInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthCourseInitializer.swift; sourceTree = "<group>"; };
 		95010181208231A0007EE398 /* FourthCourseConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthCourseConfigurator.swift; sourceTree = "<group>"; };
+		953D3DA220853A5700EC57B5 /* DetailReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReviewViewController.swift; sourceTree = "<group>"; };
 		955ACD6B207EBEEF006F7F26 /* CourseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955ACD6E207EBEEF006F7F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		955ACD70207EBEEF006F7F26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		95010105207FEE24007EE398 /* Moduls */ = {
 			isa = PBXGroup;
 			children = (
+				953D3DA120853A3700EC57B5 /* DetailReview */,
 				9501017D20823121007EE398 /* FourthCourse */,
 				95010173208229A5007EE398 /* ThirdCourse */,
 				950101322080098F007EE398 /* SecondCourse */,
@@ -392,6 +395,14 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
+		953D3DA120853A3700EC57B5 /* DetailReview */ = {
+			isa = PBXGroup;
+			children = (
+				953D3DA220853A5700EC57B5 /* DetailReviewViewController.swift */,
+			);
+			path = DetailReview;
+			sourceTree = "<group>";
+		};
 		955ACD62207EBEEF006F7F26 = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +560,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CourseProject/Pods-CourseProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
@@ -558,6 +570,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
@@ -591,6 +604,7 @@
 				950101552080922D007EE398 /* CourseInteractor.swift in Sources */,
 				95010114207FF637007EE398 /* SettingsInteractor.swift in Sources */,
 				95010116207FF642007EE398 /* SettingsInteractorInput.swift in Sources */,
+				953D3DA320853A5700EC57B5 /* DetailReviewViewController.swift in Sources */,
 				9501012220800343007EE398 /* DbManager.swift in Sources */,
 				95010118207FF64D007EE398 /* SettingsInteractorOutput.swift in Sources */,
 				95010120208002EC007EE398 /* SettingsModel.swift in Sources */,
