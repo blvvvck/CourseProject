@@ -11,6 +11,7 @@ import DLRadioButton
 
 class DetailReviewViewController: UIViewController {
 
+    @IBOutlet weak var themeLabel: UILabel!
     @IBOutlet weak var radioBtn: DLRadioButton!
     @IBOutlet weak var textView: UITextView!
     
@@ -20,6 +21,7 @@ class DetailReviewViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        themeLabel.text = "dsadsadsadsadhsadasbduasbduasbdhasbdjhasbdasbdjsahbdja"
         radioBtn.isMultipleSelectionEnabled = false
         radioBtn.isMultipleTouchEnabled = false
         constraintTextViewToMerk.priority = .defaultLow

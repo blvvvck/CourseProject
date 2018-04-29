@@ -45,9 +45,20 @@ class FirstCourseViewController: UIViewController, CourseViewInput {
         dataSource.setCellModels(with: checkedCellModels)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let moduleHolder = segue.destination as? ModuleInputHolder else { return }
+        moduleHolder.moduleInput?.setData(sender)
+    }
+    
     private func registerCell() {
         let mediaCellNib = UINib(nibName: studentCellNibIdentifier, bundle: nil)
         self.tableView.register(mediaCellNib, forCellReuseIdentifier: studentCellIdentifier)
     }
+}
 
+extension FirstCourseViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
