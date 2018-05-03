@@ -15,6 +15,9 @@ class DetailReviewViewController: UIViewController {
     @IBOutlet weak var radioBtn: DLRadioButton!
     @IBOutlet weak var textView: UITextView!
     
+    @IBOutlet weak var workRatingRadioButton: DLRadioButton!
+    @IBOutlet weak var textWorkRadioButton: DLRadioButton!
+    @IBOutlet weak var completeWorkRadioButton: DLRadioButton!
     @IBOutlet weak var constraintTextViewToMerk: NSLayoutConstraint!
     @IBOutlet weak var constraintTextViewToOther: NSLayoutConstraint!
     @IBOutlet weak var constraintOtherToMark: NSLayoutConstraint!
@@ -22,8 +25,6 @@ class DetailReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         themeLabel.text = "dsadsadsadsadhsadasbduasbduasbdhasbdjhasbdasbdjsahbdja"
-        radioBtn.isMultipleSelectionEnabled = false
-        radioBtn.isMultipleTouchEnabled = false
         constraintTextViewToMerk.priority = .defaultLow
         constraintTextViewToOther.priority = .defaultLow
         constraintOtherToMark.priority = .defaultHigh
@@ -32,6 +33,18 @@ class DetailReviewViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    func prepareRadioButtons() {
+        radioBtn.isMultipleSelectionEnabled = false
+        radioBtn.isMultipleTouchEnabled = false
+        completeWorkRadioButton.isMultipleSelectionEnabled = false
+        completeWorkRadioButton.isMultipleTouchEnabled = false
+        workRatingRadioButton.isMultipleSelectionEnabled = false
+        workRatingRadioButton.isMultipleTouchEnabled = false
+        textWorkRadioButton.isMultipleSelectionEnabled = false
+        textWorkRadioButton.isMultipleTouchEnabled = false
+    }
+    
     @IBAction func radioButtonTapped(_ sender: DLRadioButton) {
         if sender.tag == 1 {
             print("не выявлено")
@@ -41,6 +54,7 @@ class DetailReviewViewController: UIViewController {
             constraintOtherToMark.priority = .defaultHigh
         }
         if sender.tag == 2 {
+            print(sender.titleLabel?.text)
             print("Другео")
             textView.isHidden = false
             
