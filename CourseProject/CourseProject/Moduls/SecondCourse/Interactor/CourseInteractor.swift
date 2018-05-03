@@ -25,7 +25,6 @@ class CourseInteractor: CourseInteractorInput {
                 }
                 self.presenter.didFinishGetStudents(with: cellModels)
             }
-
         }
     }
 }

@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     
     var courses = Course.fetchCourse()
     let cellScaling: CGFloat = 0.6
+    let courseSegueIdentifier = "toCourseSugue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +31,37 @@ class HomeViewController: UIViewController {
 //        collectionView.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
         
         collectionView.dataSource = self
+        collectionView.delegate = self
+        
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.isTranslucent = true
         
         //navigationController?.navigationBar.prefersLargeTitles = true
         //navigationItem.largeTitleDisplayMode = .always
          
         // Do any additional setup after loading the view.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == courseSegueIdentifier {
+            let courseVc = segue.destination as! FirstCourseViewController
+            let courseIdentifier = sender as! Int
+            switch courseIdentifier {
+            case 2:
+                courseVc.studentCourse = String(courseIdentifier)
+            case 3:
+                courseVc.studentCourse = String(courseIdentifier)
+            case 4:
+                courseVc.studentCourse = String(courseIdentifier)
+            default:
+                return
+            }
+        }
+    }
 }
 
-extension HomeViewController: UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -54,4 +77,21 @@ extension HomeViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            performSegue(withIdentifier: courseSegueIdentifier, sender: 2)
+        case 1:
+            performSegue(withIdentifier: courseSegueIdentifier, sender: 3)
+        case 2:
+            performSegue(withIdentifier: courseSegueIdentifier, sender: 4)
+        default:
+            return
+        }
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: view.frame.width, height: view.frame.height)
+//    }
 }

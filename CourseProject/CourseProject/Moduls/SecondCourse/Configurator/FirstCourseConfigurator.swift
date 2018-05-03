@@ -11,12 +11,12 @@ import UIKit
 
 class FirstCourseConfigurator {
     
-    static let studentCourse = "2"
+    //static let studentCourse = "2"
     
     static func setupModule(with viewController: FirstCourseViewController) {
 
-        viewController.studentCourse = studentCourse
-        var tableView = UITableView()
+        //viewController.studentCourse = studentCourse
+        let tableView = UITableView()
         viewController.tableView = tableView
         
         let presenter = CoursePresenter()
