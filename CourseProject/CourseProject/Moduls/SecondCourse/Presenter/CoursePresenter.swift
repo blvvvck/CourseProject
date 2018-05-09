@@ -9,9 +9,10 @@
 import Foundation
 
 class CoursePresenter: CourseViewOutput, CourseInteractorOutput {
-  
+   
     weak var view: CourseViewInput!
     var interactor: CourseInteractorInput!
+    var router: CourseRouterInput!
     
     func viewIsReady(with course: String) {
         view.prepareTableView()
@@ -21,6 +22,10 @@ class CoursePresenter: CourseViewOutput, CourseInteractorOutput {
     func didFinishGetStudents(with models: [CellModelImplementation]) {
         view.set(cellModels: models)
         view.reloadTableView()
+    }
+    
+    func didSelectStudent(with id: Int) {
+        router.showDetailScreen(with: id)
     }
     
 }

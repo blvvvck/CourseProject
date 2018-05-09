@@ -7,10 +7,10 @@
 //
 
 import UIKit
+import BetterSegmentedControl
 
 class FirstCourseViewController: UIViewController, CourseViewInput {    
     
-
     var dataSource: StudentsDataSource!
     var presenter: CourseViewOutput!
     let studentCellNibIdentifier = "StudentTableViewCell"
@@ -18,36 +18,101 @@ class FirstCourseViewController: UIViewController, CourseViewInput {
     let estimatedRowHeight: CGFloat = 100
     var studentCourse: String = "2"
     var tableView = UITableView()
+    var studentDbManager: StudentDbManager = StudentDbManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         presenter.viewIsReady(with: studentCourse)
+    
+        let control = BetterSegmentedControl(
+            frame: CGRect(x: 0.0, y: 64.0, width: view.bounds.width, height: 35.0),
+            titles: ["1 курс", "2 курс", "3 курс"],
+            index: 0,
+            options: [.backgroundColor(UIColor(red:255, green:255, blue:255, alpha:1.00)),
+                      .titleColor(.black),
+                      .indicatorViewBackgroundColor(UIColor(red:0.55, green:0.26, blue:0.86, alpha:1.00)),
+                      .selectedTitleColor(.white),
+                      .titleFont(UIFont(name: "HelveticaNeue", size: 14.0)!),
+                      .selectedTitleFont(UIFont(name: "HelveticaNeue-Medium", size: 14.0)!)]
+        )
+        control.addTarget(self, action: #selector(self.navigationSegmentedControlValueChanged(_:)), for: .valueChanged)
+        view.addSubview(control)
         
+        var students = studentDbManager.getDataFromDB()
+        for student in students {
+            print(String(describing: student))
+        }
+//        for student in students {
+//
+//        }
+//        let testSudents = studentDbManager.getStudentsByCourse(with: "4")
+//        for testStudent in testSudents {
+//            print("======4КУРС=====")
+//            print(testSudents)
+//        }
+    }
+    
+    @objc func navigationSegmentedControlValueChanged(_ sender: BetterSegmentedControl) {
+        if sender.index == 0 {
+            dataSource.clearTable()
+            presenter.viewIsReady(with: "2")
+            tableView.reloadData()
+            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+            //reloadTableView()
+        }
+        if sender.index == 1 {
+            dataSource.clearTable()
+            presenter.viewIsReady(with: "3")
+            tableView.reloadData()
+            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+            //reloadTableView()
+
+
+        }
+        if sender.index == 2 {
+            dataSource.clearTable()
+            presenter.viewIsReady(with: "4")
+            tableView.reloadData()
+            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+
+            //reloadTableView()
+
+
+        }
     }
     
     func prepareTableView() {
-        tableView.frame = CGRect(x: 0, y: 0, width: 320, height: 568)
+        tableView.frame = CGRect(x: 0, y: 100, width: 320, height: 465)
         self.view.addSubview(tableView)
         registerCell()
         tableView.estimatedRowHeight = estimatedRowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.dataSource = dataSource
-        tableView.delegate = dataSource
+        tableView.delegate = self
     }
     
     func reloadTableView() {
+        let previousContentHeight = tableView.contentSize.height
+        let previousContentOffset = tableView.contentOffset.y
         tableView.reloadData()
+        tableView.layoutIfNeeded()
+        let currentContentOffset = tableView.contentSize.height - previousContentHeight + previousContentOffset
+        tableView.contentOffset = CGPoint(x: 0, y: currentContentOffset)
+        //tableView.reloadData()
     }
     
     func set(cellModels: [CellModel]?) {
         guard let checkedCellModels = cellModels else { return }
+        dataSource.clearTable()
         dataSource.setCellModels(with: checkedCellModels)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let moduleHolder = segue.destination as? ModuleInputHolder else { return }
         moduleHolder.moduleInput?.setData(sender)
+        let detailVC = segue.destination as? DetailReviewViewController
+        detailVC?.id = sender as! Int
     }
     
     private func registerCell() {
@@ -59,6 +124,17 @@ class FirstCourseViewController: UIViewController, CourseViewInput {
 extension FirstCourseViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelectStudent(with: dataSource.cellModels[indexPath.row].id) 
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.alpha = 0
+        let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
+        cell.layer.transform = transform
         
+        UIView.animate(withDuration: 0.5) {
+            cell.alpha = 1.0
+            cell.layer.transform = CATransform3DIdentity
+        }
     }
 }

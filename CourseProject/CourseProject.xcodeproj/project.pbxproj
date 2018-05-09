@@ -56,6 +56,10 @@
 		955ACD74207EBEEF006F7F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955ACD72207EBEEF006F7F26 /* Main.storyboard */; };
 		955ACD76207EBEEF006F7F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955ACD75207EBEEF006F7F26 /* Assets.xcassets */; };
 		955ACD79207EBEEF006F7F26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955ACD77207EBEEF006F7F26 /* LaunchScreen.storyboard */; };
+		955E2A5820A3768000C65B4A /* courseProject1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 955E2A5720A3768000C65B4A /* courseProject1.pdf */; };
+		955E2A5D20A376C600C65B4A /* CompleteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E2A5C20A376C600C65B4A /* CompleteReviewViewController.swift */; };
+		9561E97C209B6C5100DB516B /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561E97B209B6C5100DB516B /* Student.swift */; };
+		9561E97E209B6D5100DB516B /* StudentDbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561E97D209B6D5100DB516B /* StudentDbManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +116,10 @@
 		955ACD75207EBEEF006F7F26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		955ACD78207EBEEF006F7F26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955ACD7A207EBEEF006F7F26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		955E2A5720A3768000C65B4A /* courseProject1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject1.pdf; sourceTree = "<group>"; };
+		955E2A5C20A376C600C65B4A /* CompleteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteReviewViewController.swift; sourceTree = "<group>"; };
+		9561E97B209B6C5100DB516B /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		9561E97D209B6D5100DB516B /* StudentDbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDbManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +145,7 @@
 		95010105207FEE24007EE398 /* Moduls */ = {
 			isa = PBXGroup;
 			children = (
+				955E2A5920A3769100C65B4A /* CompleteReview */,
 				953D3DA120853A3700EC57B5 /* DetailReview */,
 				9501017D20823121007EE398 /* FourthCourse */,
 				95010173208229A5007EE398 /* ThirdCourse */,
@@ -225,6 +234,7 @@
 		9501011E208002DC007EE398 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				955E2A5720A3768000C65B4A /* courseProject1.pdf */,
 				9531128E2087F8C200CBA939 /* ModuleInput */,
 				9501013820808CD5007EE398 /* Models */,
 				9501012920800716007EE398 /* AlertFactory */,
@@ -306,6 +316,7 @@
 			children = (
 				9501013920808CE7007EE398 /* CellModel */,
 				9501011F208002EC007EE398 /* SettingsModel.swift */,
+				9561E97B209B6C5100DB516B /* Student.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -351,6 +362,7 @@
 			children = (
 				9501012120800343007EE398 /* DbManager.swift */,
 				950101232080034D007EE398 /* DbManagerImplementation.swift */,
+				9561E97D209B6D5100DB516B /* StudentDbManager.swift */,
 			);
 			path = DbManager;
 			sourceTree = "<group>";
@@ -456,6 +468,14 @@
 			path = CourseProject;
 			sourceTree = "<group>";
 		};
+		955E2A5920A3769100C65B4A /* CompleteReview */ = {
+			isa = PBXGroup;
+			children = (
+				955E2A5C20A376C600C65B4A /* CompleteReviewViewController.swift */,
+			);
+			path = CompleteReview;
+			sourceTree = "<group>";
+		};
 		DD2F23C1147B51A6B2308819 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +547,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955E2A5820A3768000C65B4A /* courseProject1.pdf in Resources */,
 				955ACD79207EBEEF006F7F26 /* LaunchScreen.storyboard in Resources */,
 				955ACD76207EBEEF006F7F26 /* Assets.xcassets in Resources */,
 				955ACD74207EBEEF006F7F26 /* Main.storyboard in Resources */,
@@ -580,21 +601,25 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CourseProject/Pods-CourseProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ILPDFKit/ILPDFKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ILPDFKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -611,6 +636,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9501014620809087007EE398 /* StudentsDataSource.swift in Sources */,
+				9561E97E209B6D5100DB516B /* StudentDbManager.swift in Sources */,
 				955ACD71207EBEEF006F7F26 /* ViewController.swift in Sources */,
 				9501015920809242007EE398 /* CourseInteractorOutput.swift in Sources */,
 				950101512080921C007EE398 /* CourseViewOutput.swift in Sources */,
@@ -623,6 +649,7 @@
 				95010109207FF404007EE398 /* SettingsViewController.swift in Sources */,
 				950101552080922D007EE398 /* CourseInteractor.swift in Sources */,
 				95010114207FF637007EE398 /* SettingsInteractor.swift in Sources */,
+				9561E97C209B6C5100DB516B /* Student.swift in Sources */,
 				95010116207FF642007EE398 /* SettingsInteractorInput.swift in Sources */,
 				953112982087F9F400CBA939 /* CourseRouterInput.swift in Sources */,
 				953112942087F94000CBA939 /* ModuleInputHolder.swift in Sources */,
@@ -650,6 +677,7 @@
 				9501016F20814B9C007EE398 /* FirstCourseInitializer.swift in Sources */,
 				9501018020823195007EE398 /* FourthCourseInitializer.swift in Sources */,
 				950101242080034D007EE398 /* DbManagerImplementation.swift in Sources */,
+				955E2A5D20A376C600C65B4A /* CompleteReviewViewController.swift in Sources */,
 				9501013B20808CF5007EE398 /* CellModel.swift in Sources */,
 				9501017920822A74007EE398 /* ThirdCourseInitializer.swift in Sources */,
 				953112962087F9A600CBA939 /* ModuleInput.swift in Sources */,

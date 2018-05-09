@@ -10,13 +10,15 @@ import Foundation
 
 class CellModelImplementation: CellModel {
    
+    var id: Int
     var name: String
     var group: String
     var theme: String
     var course: String
     var email: String
     
-    init(name: String, group: String, theme: String, course: String, email: String) {
+    init(id: Int, name: String, group: String, theme: String, course: String, email: String) {
+        self.id = id
         self.name = name
         self.group = group
         self.theme = theme

@@ -24,13 +24,16 @@ class FirstCourseConfigurator {
         let dbManager = DbManagerImplementation()
         let parserManager = GoogleTableParserManagerImplementation()
         let dataSource = StudentsDataSource()
+        let router = CourseRouter()
         
         viewController.presenter = presenter
         viewController.dataSource = dataSource
         presenter.view = viewController
         presenter.interactor = interactor
+        presenter.router = router
         interactor.presenter = presenter
         interactor.tableParser = parserManager
         parserManager.dbManager = dbManager
+        router.viewController = viewController
     }
 }

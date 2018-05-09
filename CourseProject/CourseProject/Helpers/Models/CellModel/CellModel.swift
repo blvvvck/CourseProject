@@ -10,6 +10,7 @@ import Foundation
 
 protocol CellModel {
     
+    var id: Int {get set}
     var name: String { get set }
     var group: String { get set }
     var theme: String { get set }

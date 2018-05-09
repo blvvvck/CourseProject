@@ -10,5 +10,5 @@ import Foundation
 
 protocol CourseRouterInput: class {
     
-    func showDetailScreen(with mode: StudentModel)
+    func showDetailScreen(with id: Int)
 }

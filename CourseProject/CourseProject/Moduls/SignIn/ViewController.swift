@@ -70,7 +70,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
             self.output.isHidden = false
             self.service.authorizer = user.authentication.fetcherAuthorizer()
             //UserDefaults.standard.setValue(user, forKey: "user")
-            listMajors()
+            //listMajors()
 //            var courseFirst = [ResultStruct]()
 //
 //            for entity in enitys {
@@ -99,30 +99,30 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 //                             delegate: self,
 //                             didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:))
 //        )
-        service.executeQuery(query) { (ticket, result, error) in
-
-            var newResult = result as! GTLRSheets_ValueRange
-            var rows = newResult.values!
-            
-            for row in rows {
-                let enity = ResultStruct(name: row[0] as! String, group: row[1] as! String, theme: row[2] as! String, course: row[3] as! String, email: row[4] as! String)
-                self.enitys.append(enity)
-            }
-            
-            var courseFirst = [ResultStruct]()
-            
-            for entity in self.enitys {
-                if entity.course == "2" {
-                    courseFirst.append(entity)
-                }
-            }
-            
-            for student in courseFirst {
-                print(student.name)
-                print(student.course)
-                print(student.theme)
-            }
-        }
+//        service.executeQuery(query) { (ticket, result, error) in
+//
+//            var newResult = result as! GTLRSheets_ValueRange
+//            var rows = newResult.values!
+//
+//            for row in rows {
+//                let enity = ResultStruct(name: row[0] as! String, group: row[1] as! String, theme: row[2] as! String, course: row[3] as! String, email: row[4] as! String)
+//                self.enitys.append(enity)
+//            }
+//
+//            var courseFirst = [ResultStruct]()
+//
+//            for entity in self.enitys {
+//                if entity.course == "2" {
+//                    courseFirst.append(entity)
+//                }
+//            }
+//
+//            for student in courseFirst {
+//                print(student.name)
+//                print(student.course)
+//                print(student.theme)
+//            }
+//        }
         
         
     }
