@@ -85,7 +85,7 @@ class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewContro
             let toRecipients = ["wrooneyn10@gmail.com"]
             
             let mailComposer = MFMailComposeViewController()
-            mailComposer.delegate = self as! UIViewController as! UINavigationControllerDelegate
+            mailComposer.mailComposeDelegate = self
             mailComposer.setSubject(subject)
             mailComposer.setMessageBody(messageBody, isHTML: false)
             mailComposer.setToRecipients(toRecipients)
@@ -94,19 +94,32 @@ class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewContro
         }
     }
     
-//    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-//        
-//        switch result.rawValue {
-//        case MFMailComposeResult.cancelled.rawValue:
-//            
-//        default:
-//            <#code#>
-//        }
-//    }
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        switch result.rawValue {
+        case MFMailComposeResult.cancelled.rawValue:
+            alert(title: "Ooops", msg: "Mail cancelled")
+        case MFMailComposeResult.sent.rawValue:
+            alert(title: "Yes!", msg: "Mail sent")
+        case MFMailComposeResult.saved.rawValue:
+            alert(title: "Yes!", msg: "Mail saved")
+        case MFMailComposeResult.failed.rawValue:
+            alert(title: "Ooops", msg: "Mail failed")
+        default:
+            break
+        }
+        dismiss(animated: true, completion: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func alert(title: String, msg: String) {
+        let alertConntroller = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        alertConntroller.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alertConntroller, animated: true, completion: nil)
     }
     
 

@@ -53,19 +53,24 @@ class FirstCourseViewController: UIViewController, CourseViewInput {
 //        }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        anitmateTable()
+    }
+    
     @objc func navigationSegmentedControlValueChanged(_ sender: BetterSegmentedControl) {
         if sender.index == 0 {
             dataSource.clearTable()
             presenter.viewIsReady(with: "2")
             tableView.reloadData()
-            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+            //self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
             //reloadTableView()
         }
         if sender.index == 1 {
             dataSource.clearTable()
             presenter.viewIsReady(with: "3")
             tableView.reloadData()
-            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+           // self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
             //reloadTableView()
 
 
@@ -74,7 +79,7 @@ class FirstCourseViewController: UIViewController, CourseViewInput {
             dataSource.clearTable()
             presenter.viewIsReady(with: "4")
             tableView.reloadData()
-            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+          //  self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
 
             //reloadTableView()
 
@@ -119,6 +124,24 @@ class FirstCourseViewController: UIViewController, CourseViewInput {
         let mediaCellNib = UINib(nibName: studentCellNibIdentifier, bundle: nil)
         self.tableView.register(mediaCellNib, forCellReuseIdentifier: studentCellIdentifier)
     }
+    
+    func anitmateTable() {
+        tableView.reloadData()
+        let cells = tableView.visibleCells
+        let tableViewHeight = tableView.bounds.size.height
+        for cell in cells {
+            cell.transform = CGAffineTransform(translationX: 0, y: tableViewHeight)
+        }
+        
+        var delayCounter = 0
+        
+        for cell in cells {
+            UIView.animate(withDuration: 0.5, delay: Double(delayCounter) * 0.05, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                cell.transform = CGAffineTransform.identity
+            }, completion: nil)
+            delayCounter += 1
+        }
+    }
 }
 
 extension FirstCourseViewController: UITableViewDelegate {
@@ -127,14 +150,14 @@ extension FirstCourseViewController: UITableViewDelegate {
         presenter.didSelectStudent(with: dataSource.cellModels[indexPath.row].id) 
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.alpha = 0
-        let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
-        cell.layer.transform = transform
-        
-        UIView.animate(withDuration: 0.5) {
-            cell.alpha = 1.0
-            cell.layer.transform = CATransform3DIdentity
-        }
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        cell.alpha = 0
+//        let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
+//        cell.layer.transform = transform
+//
+//        UIView.animate(withDuration: 0.5) {
+//            cell.alpha = 1.0
+//            cell.layer.transform = CATransform3DIdentity
+//        }
+//    }
 }
