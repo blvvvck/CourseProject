@@ -10,13 +10,17 @@ import UIKit
 import DLRadioButton
 import ILPDFKit
 
-class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHolder {
+class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHolder, UITextViewDelegate {
     var moduleInput: ModuleInput?
     
     @IBOutlet weak var themeLabel: UILabel!
     @IBOutlet weak var radioBtn: DLRadioButton!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var groupLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var dignityTextView: UITextView!
     @IBOutlet weak var directionRadioButton: DLRadioButton!
     @IBOutlet weak var workRatingRadioButton: DLRadioButton!
     @IBOutlet weak var textWorkRadioButton: DLRadioButton!
@@ -26,6 +30,9 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
     @IBOutlet weak var constraintOtherToMark: NSLayoutConstraint!
     let studentDbManager = StudentDbManager()
     var id = 0
+    var student: Student!
+    let settingsDbManager = DbManagerImplementation()
+    var settings: SettingsModel!
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +43,56 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
         textView.isHidden = true
         radioBtn.isSelected = true
         moduleInput = self
-        var student = studentDbManager.getStudentById(with: id)
-        themeLabel.text = student.theme
+        student = studentDbManager.getStudentById(with: id)
         workRatingRadioButton.isSelected = true
+        settings = settingsDbManager.getDataFromDB()
         // Do any additional setup after loading the view.
+        prepareStudentInfo()
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(actionTap))
+        self.view.addGestureRecognizer(gesture)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: Notification.Name.UIKeyboardWillShow, object: nil)
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func keyboardWillAppear(_ notification: NSNotification) {
+        
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height + 40
+        scrollView.contentInset = contentInset
+        
+    }
+    
+    @objc func keyboardWillDisappear(_ notification: NSNotification) {
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
+    }
+    
+    @objc func actionTap() {
+        if (textView.isFirstResponder || dignityTextView.isFirstResponder ) {
+            textView.resignFirstResponder()
+            dignityTextView.resignFirstResponder()
+        }
+    }
+    
+    func prepareStudentInfo() {
+        nameLabel.text = student.name
+        groupLabel.text = student.group
+        themeLabel.text = student.theme
     }
     
     func prepareRadioButtons() {
@@ -91,7 +144,24 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
 
     @IBAction func generate(_ sender: Any) {
         let pdfReview = CompleteReviewViewController()
-        pdfReview.name = "Аня"
+        var limitationsText = ""
+        var conclusionText = ""
+        //pdfReview.name = "Аня"
+        if radioBtn.titleLabel?.text == "Не выявлено" {
+            limitationsText = "Существенных недостатков в работе выявлено не было"
+        } else {
+            limitationsText = textView.text
+        }
+        if completeWorkRadioButton.titleLabel?.text == "5" {
+            conclusionText = "Данная работа соответствует требования и заслуживает оценки отлично"
+        } else if completeWorkRadioButton.titleLabel?.text == "4" {
+            conclusionText = "Данная работа соответствует требования и заслуживает оценки хорошо"
+        } else if completeWorkRadioButton.titleLabel?.text == "3" {
+            conclusionText = "Данная работа соответствует требования и заслуживает оценки удовлетворительно"
+        }
+        let reviewModel = ReviewModel(theme: student.theme, studentName: student.name, institute: "Высшая школа информационных технологий и информационных систем", direction: (directionRadioButton.titleLabel?.text)!, mentor: settings.mentor, workRating: (workRatingRadioButton.titleLabel?.text)!, textRating: (textWorkRadioButton.titleLabel?.text)!, dignity: dignityTextView.text, limitations: limitationsText, conclusion: conclusionText, studentEmail: student.email)
+        
+        pdfReview.reviewModel = reviewModel
         navigationController?.pushViewController(pdfReview as! UIViewController, animated: true)
     }
     /*

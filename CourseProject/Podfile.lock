@@ -27,6 +27,7 @@ PODS:
   - GTMSessionFetcher/Full (1.1.15):
     - GTMSessionFetcher/Core (= 1.1.15)
   - ILPDFKit (1.2.5)
+  - IQKeyboardManagerSwift (6.0.2)
   - Realm (3.5.0):
     - Realm/Headers (= 3.5.0)
   - Realm/Headers (3.5.0)
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - GoogleAPIClientForREST/Sheets (~> 1.2.1)
   - GoogleSignIn (~> 4.1.1)
   - ILPDFKit
+  - IQKeyboardManagerSwift
   - RealmSwift
 
 SPEC CHECKSUMS:
@@ -50,9 +52,10 @@ SPEC CHECKSUMS:
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   ILPDFKit: ccccf31fd5a7992275798bec02e055fdc39e3b14
+  IQKeyboardManagerSwift: 59d4b0e140bc546c3c76ae5bb35b3dafd10b8172
   Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
   RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
 
-PODFILE CHECKSUM: b880f167013cf94571dee29a3f6005e67db2011a
+PODFILE CHECKSUM: 5f2a85ba9504d66115395efa80acccbf25652338
 
 COCOAPODS: 1.3.1

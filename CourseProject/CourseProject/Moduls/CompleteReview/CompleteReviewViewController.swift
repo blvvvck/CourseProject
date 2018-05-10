@@ -12,7 +12,7 @@ import MessageUI
 
 class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var pdf: ILPDFView!
-    var name = "Ринат"
+    var reviewModel: ReviewModel!
     var data: Data!
     
     override func viewDidLoad() {
@@ -43,11 +43,24 @@ class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewContro
         self.navigationItem.setRightBarButton(homeButton, animated: true)
 
         
-        let document = ILPDFDocument(resource:"courseProject1.pdf")
+        let document = ILPDFDocument(resource:"courseProject2.pdf")
         self.document = document
         let test = document.forms.forms(withName: "theme")
         let studentNameForm = document.forms.forms(withName: "studentName")
-        studentNameForm.first?.value = name
+        studentNameForm.first?.value = reviewModel.studentName
+        
+        let themeForm = document.forms.forms(withName: "theme1")
+        themeForm.first?.value = reviewModel.theme
+        
+        
+        let instituteForm = document.forms.forms(withName: "institute")
+        instituteForm.first?.value = reviewModel.institute
+        
+        let directionForm = document.forms.forms(withName: "directionOfTraining")
+        directionForm.first?.value = reviewModel.direction
+        
+        let mentorForm = document.forms.forms(withName: "mentor")
+        mentorForm.first?.value = reviewModel.mentor
         
         let realization = document.forms.forms(withName: "realization_4")
         let text = document.forms.forms(withName: "text_3")
@@ -70,7 +83,7 @@ class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewContro
         self.pdfView?.pdfView.scrollView.tintColor = UIColor.white
         print(self.pdfView?.pdfView.subviews)
 
-
+        print(reviewModel)
         //self.pdfView?.pdfView.frame.size.height = 568
         //self.pdfView?.pdfView.frame.size.width = 320
 
