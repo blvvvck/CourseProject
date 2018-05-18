@@ -14,10 +14,16 @@ class StudentTableViewCell: UITableViewCell {
     @IBOutlet weak var groupLabel: UILabel!
     @IBOutlet weak var themeLabel: UILabel!
     
+    override func prepareForReuse() {
+        self.backgroundColor = UIColor.white
+    }
+    
     func prepare(with model: CellModel) {
         nameLabel.text = model.name
         groupLabel.text = model.group
         themeLabel.text = model.theme
+        if model.isCompleted {
+            self.backgroundColor = UIColor.green
+        }
     }
-    
 }

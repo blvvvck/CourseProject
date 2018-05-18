@@ -47,6 +47,14 @@ class StudentDbManager {
         return result!
     }
     
+    func setStudentAsCompleted(with id: Int) {
+        let predicate = NSPredicate(format: "id == %d", id)
+        let result = database.objects(Student.self).filter(predicate).first
+        try! database.write {
+            result?.isCompleted = true
+        }
+    }
+    
 //    func getDefaultDataFromDB() -> SettingsModel {
 //        let defaultSettingsModel = SettingsModel(value: ["mentor": defaultMentor, "link": defaultLink, "sheetName": defaultSheetName, "range": defaultRange ])
 //        return defaultSettingsModel

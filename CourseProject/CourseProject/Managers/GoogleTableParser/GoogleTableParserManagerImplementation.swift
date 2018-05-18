@@ -58,6 +58,7 @@ class GoogleTableParserManagerImplementation: GoogleTableParserManager {
                         studentRealm.theme = student.theme
                         studentRealm.course = student.course
                         studentRealm.email = student.email
+                        studentRealm.isCompleted = false
                         strongSelf.studentDbManager.addData(object: studentRealm)
                         //                    let studentRealm = Student()
                         //                    studentRealm.id = studentRealm.Inc

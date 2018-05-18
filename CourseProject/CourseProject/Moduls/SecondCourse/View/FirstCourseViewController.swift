@@ -56,6 +56,9 @@ class FirstCourseViewController: UIViewController, CourseViewInput {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         anitmateTable()
+        //tableView.reloadData()
+        //presenter.viewIsReady(with: studentCourse)
+        //tableView.reloadData()
     }
     
     @objc func navigationSegmentedControlValueChanged(_ sender: BetterSegmentedControl) {
@@ -63,13 +66,18 @@ class FirstCourseViewController: UIViewController, CourseViewInput {
             dataSource.clearTable()
             presenter.viewIsReady(with: "2")
             tableView.reloadData()
-            //self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+            if tableView.visibleCells.count != 0 {
+                self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+            }
             //reloadTableView()
         }
         if sender.index == 1 {
             dataSource.clearTable()
             presenter.viewIsReady(with: "3")
             tableView.reloadData()
+            if tableView.visibleCells.count != 0 {
+                self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+            }
            // self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
             //reloadTableView()
 
@@ -79,9 +87,12 @@ class FirstCourseViewController: UIViewController, CourseViewInput {
             dataSource.clearTable()
             presenter.viewIsReady(with: "4")
             tableView.reloadData()
+            if tableView.visibleCells.count != 0 {
+                self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+            }
           //  self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
 
-            //reloadTableView()
+           // reloadTableView()
 
 
         }

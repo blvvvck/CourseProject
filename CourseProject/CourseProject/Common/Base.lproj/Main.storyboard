@@ -71,6 +71,7 @@
                     <connections>
                         <outlet property="signIn" destination="gFX-ao-F96" id="ydw-D1-UTv"/>
                         <segue destination="U7e-Sz-huq" kind="show" identifier="mainScreenSegue" id="pIx-Db-qHK"/>
+                        <segue destination="S0L-TB-3Pw" kind="show" identifier="toSettings" id="RGg-aj-170"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -110,7 +111,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="1236"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQD-mi-j2Y">
-                                        <rect key="frame" x="8" y="40" width="304" height="94.5"/>
+                                        <rect key="frame" x="8" y="40" width="304" height="94"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31v-VY-JEF">
                                                 <rect key="frame" x="8" y="8" width="224" height="20.5"/>
@@ -140,7 +141,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="themeLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52n-u6-qHK">
-                                                <rect key="frame" x="62" y="66" width="234" height="20.5"/>
+                                                <rect key="frame" x="62" y="65.5" width="234" height="20.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="234" id="hZL-Gp-at7"/>
                                                 </constraints>
@@ -167,13 +168,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Направление подготовки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbM-Eo-FIz">
-                                        <rect key="frame" x="40" y="160.5" width="240" height="21"/>
+                                        <rect key="frame" x="40" y="160" width="240" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yX0-Ml-bfk" customClass="DLRadioButton">
-                                        <rect key="frame" x="8" y="189.5" width="304" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yX0-Ml-bfk" customClass="DLRadioButton">
+                                        <rect key="frame" x="8" y="189" width="304" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="09.03.03 - Прикладная информатика">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -182,21 +183,21 @@
                                             <outletCollection property="otherButtons" destination="YLe-Bv-xZp" id="Sl5-vK-PTe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLe-Bv-xZp" customClass="DLRadioButton">
-                                        <rect key="frame" x="8" y="222.5" width="304" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLe-Bv-xZp" customClass="DLRadioButton">
+                                        <rect key="frame" x="8" y="222" width="304" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="09.03.04 - Программная инженерия">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Степень реализованности програмного продукта" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaM-Wk-8PY">
-                                        <rect key="frame" x="40" y="262.5" width="240" height="41"/>
+                                        <rect key="frame" x="40" y="262" width="240" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxn-2i-1Fg" customClass="DLRadioButton">
-                                        <rect key="frame" x="68" y="311.5" width="56" height="21"/>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxn-2i-1Fg" customClass="DLRadioButton">
+                                        <rect key="frame" x="68" y="311" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="8z8-HZ-ggo"/>
                                             <constraint firstAttribute="height" constant="21" id="FOW-fK-eZs"/>
@@ -205,12 +206,13 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="radioButtonTapped:" destination="cdD-jl-rLN" eventType="touchUpInside" id="2Fh-qb-El1"/>
                                             <outletCollection property="otherButtons" destination="4rz-1F-jpk" id="rbQ-kZ-dP6"/>
                                             <outletCollection property="otherButtons" destination="og0-zF-20e" id="geE-OU-nrg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rz-1F-jpk" customClass="DLRadioButton">
-                                        <rect key="frame" x="132" y="311.5" width="56" height="21"/>
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rz-1F-jpk" customClass="DLRadioButton">
+                                        <rect key="frame" x="132" y="311" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="dCw-nl-fnU"/>
                                             <constraint firstAttribute="width" constant="56" id="mBj-Cv-JtO"/>
@@ -218,9 +220,12 @@
                                         <state key="normal" title="4">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="radioButtonTapped:" destination="cdD-jl-rLN" eventType="touchUpInside" id="F45-Yh-4hw"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="og0-zF-20e" customClass="DLRadioButton">
-                                        <rect key="frame" x="196" y="311.5" width="56" height="21"/>
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="og0-zF-20e" customClass="DLRadioButton">
+                                        <rect key="frame" x="196" y="311" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="HBv-xH-HPf"/>
                                             <constraint firstAttribute="width" constant="56" id="Phr-En-Pdg"/>
@@ -228,21 +233,24 @@
                                         <state key="normal" title="3">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="radioButtonTapped:" destination="cdD-jl-rLN" eventType="touchUpInside" id="rek-7k-IbP"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст работы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5c-DK-dw5">
-                                        <rect key="frame" x="40" y="350.5" width="240" height="21"/>
+                                        <rect key="frame" x="40" y="350" width="240" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Достоинства" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcO-eb-Ka0">
-                                        <rect key="frame" x="40" y="417.5" width="240" height="21"/>
+                                        <rect key="frame" x="40" y="417" width="240" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObJ-fc-srF" customClass="DLRadioButton">
-                                        <rect key="frame" x="68" y="379.5" width="56" height="21"/>
+                                    <button opaque="NO" tag="14" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObJ-fc-srF" customClass="DLRadioButton">
+                                        <rect key="frame" x="68" y="379" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="5eV-IB-IqW"/>
                                             <constraint firstAttribute="width" constant="56" id="M3d-DT-24l"/>
@@ -251,12 +259,13 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="radioButtonTapped:" destination="cdD-jl-rLN" eventType="touchUpInside" id="s9M-hx-K1G"/>
                                             <outletCollection property="otherButtons" destination="Naq-6b-V6O" id="fuY-Yd-o79"/>
                                             <outletCollection property="otherButtons" destination="Ahl-7W-EoC" id="bkm-tW-vHa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Naq-6b-V6O" customClass="DLRadioButton">
-                                        <rect key="frame" x="132" y="379.5" width="56" height="34"/>
+                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Naq-6b-V6O" customClass="DLRadioButton">
+                                        <rect key="frame" x="132" y="379" width="56" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Wfl-bZ-LRA"/>
                                             <constraint firstAttribute="width" constant="56" id="ngh-k4-PLt"/>
@@ -264,9 +273,12 @@
                                         <state key="normal" title="4">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="radioButtonTapped:" destination="cdD-jl-rLN" eventType="touchUpInside" id="e9b-qf-jcN"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahl-7W-EoC" customClass="DLRadioButton">
-                                        <rect key="frame" x="196" y="379.5" width="56" height="21"/>
+                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahl-7W-EoC" customClass="DLRadioButton">
+                                        <rect key="frame" x="196" y="379" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="RBP-F4-Vpk"/>
                                             <constraint firstAttribute="width" constant="56" id="qQW-rH-3Sn"/>
@@ -274,24 +286,68 @@
                                         <state key="normal" title="3">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="radioButtonTapped:" destination="cdD-jl-rLN" eventType="touchUpInside" id="Y7w-n3-GON"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tF-Mc-Yy8" customClass="DLRadioButton">
+                                        <rect key="frame" x="40" y="445" width="272" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Самостоятельность">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="radioButtonTapped:" destination="cdD-jl-rLN" eventType="touchUpInside" id="Uw4-90-Bff"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qM-ud-bxy" customClass="DLRadioButton">
+                                        <rect key="frame" x="40" y="487" width="272" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Ответственный подход к решению поставленных задач">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="radioButtonTapped:" destination="cdD-jl-rLN" eventType="touchUpInside" id="UK0-3t-kP6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zer-Qx-J0A" customClass="DLRadioButton">
+                                        <rect key="frame" x="40" y="537" width="272" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Высокий уровень профессиональных компетенций">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="radioButtonTapped:" destination="cdD-jl-rLN" eventType="touchUpInside" id="GpP-4R-9x6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYA-mt-699" customClass="DLRadioButton">
+                                        <rect key="frame" x="40" y="579" width="272" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Другое">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="radioButtonTapped:" destination="cdD-jl-rLN" eventType="touchUpInside" id="diE-BS-75N"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lh4-DH-7Hw">
-                                        <rect key="frame" x="40" y="456.5" width="240" height="128"/>
+                                        <rect key="frame" x="40" y="617" width="240" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="cIr-eH-Umq"/>
                                             <constraint firstAttribute="height" constant="128" id="rv4-Y5-2ZN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Недостатки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNP-6D-ivw">
-                                        <rect key="frame" x="40" y="607.5" width="240" height="21"/>
+                                        <rect key="frame" x="40" y="757" width="240" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSl-US-WJZ" customClass="DLRadioButton">
-                                        <rect key="frame" x="40" y="636.5" width="128" height="34"/>
+                                        <rect key="frame" x="40" y="786" width="128" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="128" id="d0q-y9-srB"/>
                                         </constraints>
@@ -304,7 +360,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kny-HU-Nnq" customClass="DLRadioButton">
-                                        <rect key="frame" x="40" y="672.5" width="105" height="34"/>
+                                        <rect key="frame" x="40" y="822" width="105" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="105" id="6hn-uD-wEh"/>
                                         </constraints>
@@ -316,13 +372,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Общая оценка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4f-m4-lYC">
-                                        <rect key="frame" x="40" y="854.5" width="240" height="21"/>
+                                        <rect key="frame" x="40" y="1004" width="240" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEd-1v-2NA" customClass="DLRadioButton">
-                                        <rect key="frame" x="83" y="889.5" width="46" height="30"/>
+                                    <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEd-1v-2NA" customClass="DLRadioButton">
+                                        <rect key="frame" x="83" y="1039" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="Jpm-dq-bVI"/>
                                         </constraints>
@@ -330,12 +386,13 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="radioButtonTapped:" destination="cdD-jl-rLN" eventType="touchUpInside" id="Cg4-vm-cmE"/>
                                             <outletCollection property="otherButtons" destination="VWs-7c-3jQ" id="0si-XY-c7c"/>
                                             <outletCollection property="otherButtons" destination="GTb-yZ-Jss" id="hNT-jI-zRD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWs-7c-3jQ" customClass="DLRadioButton">
-                                        <rect key="frame" x="137" y="889.5" width="46" height="30"/>
+                                    <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWs-7c-3jQ" customClass="DLRadioButton">
+                                        <rect key="frame" x="137" y="1039" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="KYR-Fe-Xtc"/>
                                             <constraint firstAttribute="width" constant="46" id="qtc-ZZ-2tx"/>
@@ -343,9 +400,12 @@
                                         <state key="normal" title="4">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="radioButtonTapped:" destination="cdD-jl-rLN" eventType="touchUpInside" id="dxt-ME-5sc"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTb-yZ-Jss" customClass="DLRadioButton">
-                                        <rect key="frame" x="191" y="889.5" width="46" height="30"/>
+                                    <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTb-yZ-Jss" customClass="DLRadioButton">
+                                        <rect key="frame" x="191" y="1039" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="I52-P4-QJ1"/>
                                             <constraint firstAttribute="width" constant="46" id="iDe-Ub-n1d"/>
@@ -353,20 +413,20 @@
                                         <state key="normal" title="3">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="radioButtonTapped:" destination="cdD-jl-rLN" eventType="touchUpInside" id="kTN-yz-jER"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNF-wo-cIw">
-                                        <rect key="frame" x="105" y="936.5" width="110" height="30"/>
+                                        <rect key="frame" x="40" y="1086" width="240" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Сгенерировать"/>
                                         <connections>
                                             <action selector="generate:" destination="cdD-jl-rLN" eventType="touchUpInside" id="YRk-s5-PHM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8G-pH-LAZ">
-                                        <rect key="frame" x="122" y="974.5" width="77" height="30"/>
-                                        <state key="normal" title="Отправить"/>
-                                    </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JGH-kD-1fZ">
-                                        <rect key="frame" x="40" y="714.5" width="240" height="128"/>
+                                        <rect key="frame" x="40" y="864" width="240" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="0uh-1Q-1GV"/>
@@ -380,14 +440,12 @@
                                     <constraint firstAttribute="trailing" secondItem="UaM-Wk-8PY" secondAttribute="trailing" constant="40" id="0IL-XY-vSg"/>
                                     <constraint firstItem="YLe-Bv-xZp" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="8" id="0Q5-4J-oKI"/>
                                     <constraint firstItem="Naq-6b-V6O" firstAttribute="baseline" secondItem="Ahl-7W-EoC" secondAttribute="baseline" id="0X7-ox-e4B"/>
-                                    <constraint firstItem="K8G-pH-LAZ" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="122" id="1DF-uY-DGG"/>
-                                    <constraint firstAttribute="trailing" secondItem="K8G-pH-LAZ" secondAttribute="trailing" constant="121" id="2wQ-lK-HRi"/>
-                                    <constraint firstItem="nNP-6D-ivw" firstAttribute="top" secondItem="lh4-DH-7Hw" secondAttribute="bottom" constant="23" id="3LL-TR-UgL"/>
+                                    <constraint firstItem="nNP-6D-ivw" firstAttribute="top" secondItem="lh4-DH-7Hw" secondAttribute="bottom" priority="750" constant="12" id="3LL-TR-UgL"/>
                                     <constraint firstItem="b5c-DK-dw5" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="40" id="5Rd-Zk-d0W"/>
                                     <constraint firstItem="og0-zF-20e" firstAttribute="leading" secondItem="4rz-1F-jpk" secondAttribute="trailing" constant="8" id="6vt-Es-V6K"/>
                                     <constraint firstAttribute="trailing" secondItem="x4f-m4-lYC" secondAttribute="trailing" constant="40" id="84c-mK-16T"/>
                                     <constraint firstItem="Ahl-7W-EoC" firstAttribute="top" secondItem="Naq-6b-V6O" secondAttribute="top" id="9C0-7g-xvN"/>
-                                    <constraint firstAttribute="trailing" secondItem="dNF-wo-cIw" secondAttribute="trailing" constant="105" id="9Ou-sX-Tx9"/>
+                                    <constraint firstAttribute="trailing" secondItem="dNF-wo-cIw" secondAttribute="trailing" constant="40" id="9Ou-sX-Tx9"/>
                                     <constraint firstItem="TcO-eb-Ka0" firstAttribute="leading" secondItem="b5c-DK-dw5" secondAttribute="leading" id="AOX-yH-fOH"/>
                                     <constraint firstItem="Kny-HU-Nnq" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="40" id="BWu-x4-eRA"/>
                                     <constraint firstItem="b5c-DK-dw5" firstAttribute="top" secondItem="Qxn-2i-1Fg" secondAttribute="bottom" constant="18" id="Bqs-fB-pnx"/>
@@ -399,19 +457,24 @@
                                     <constraint firstItem="RSl-US-WJZ" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="40" id="I8V-Jn-nxr"/>
                                     <constraint firstItem="x4f-m4-lYC" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="40" id="IiD-ij-Gk0"/>
                                     <constraint firstItem="Qxn-2i-1Fg" firstAttribute="baseline" secondItem="4rz-1F-jpk" secondAttribute="baseline" id="Int-9K-CdD"/>
+                                    <constraint firstAttribute="trailing" secondItem="zer-Qx-J0A" secondAttribute="trailing" constant="8" id="KR6-5R-STT"/>
                                     <constraint firstItem="VWs-7c-3jQ" firstAttribute="top" secondItem="yEd-1v-2NA" secondAttribute="top" id="Li2-gA-6s4"/>
                                     <constraint firstItem="ObJ-fc-srF" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="68" id="MEa-Wf-SXb"/>
                                     <constraint firstItem="Naq-6b-V6O" firstAttribute="top" secondItem="ObJ-fc-srF" secondAttribute="top" id="NRY-32-9wu"/>
+                                    <constraint firstAttribute="trailing" secondItem="5tF-Mc-Yy8" secondAttribute="trailing" constant="8" id="PEI-h0-vYf"/>
+                                    <constraint firstItem="zer-Qx-J0A" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="40" id="Poj-z4-xd4"/>
                                     <constraint firstAttribute="trailing" secondItem="nNP-6D-ivw" secondAttribute="trailing" constant="40" id="Qg6-p6-9fq"/>
                                     <constraint firstItem="ObJ-fc-srF" firstAttribute="baseline" secondItem="Naq-6b-V6O" secondAttribute="firstBaseline" id="RT4-na-zX4"/>
                                     <constraint firstItem="yX0-Ml-bfk" firstAttribute="top" secondItem="JbM-Eo-FIz" secondAttribute="bottom" constant="8" id="Ri5-lS-wHx"/>
                                     <constraint firstItem="VWs-7c-3jQ" firstAttribute="width" secondItem="yEd-1v-2NA" secondAttribute="width" id="Rrs-sj-uJk"/>
                                     <constraint firstAttribute="trailing" secondItem="b5c-DK-dw5" secondAttribute="trailing" constant="40" id="S4A-RG-y42"/>
                                     <constraint firstItem="GTb-yZ-Jss" firstAttribute="top" secondItem="VWs-7c-3jQ" secondAttribute="top" id="SCg-co-Zrj"/>
-                                    <constraint firstItem="K8G-pH-LAZ" firstAttribute="top" secondItem="dNF-wo-cIw" secondAttribute="bottom" constant="8" id="SQd-Mg-va4"/>
                                     <constraint firstItem="ObJ-fc-srF" firstAttribute="baseline" secondItem="Naq-6b-V6O" secondAttribute="baseline" id="T40-Kn-x7p"/>
                                     <constraint firstItem="TcO-eb-Ka0" firstAttribute="top" secondItem="ObJ-fc-srF" secondAttribute="bottom" constant="17" id="T4p-GW-cj3"/>
                                     <constraint firstItem="UaM-Wk-8PY" firstAttribute="top" secondItem="YLe-Bv-xZp" secondAttribute="bottom" constant="8" id="TFQ-bb-a6L"/>
+                                    <constraint firstItem="5tF-Mc-Yy8" firstAttribute="top" secondItem="TcO-eb-Ka0" secondAttribute="bottom" constant="7.5" id="Tk2-cz-7Lw"/>
+                                    <constraint firstItem="5tF-Mc-Yy8" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="40" id="Vva-OK-Kfe"/>
+                                    <constraint firstItem="zer-Qx-J0A" firstAttribute="top" secondItem="4qM-ud-bxy" secondAttribute="bottom" constant="20" id="X8f-iW-QON"/>
                                     <constraint firstAttribute="trailing" secondItem="yX0-Ml-bfk" secondAttribute="trailing" constant="8" id="XJA-q3-5RN"/>
                                     <constraint firstAttribute="trailing" secondItem="aQD-mi-j2Y" secondAttribute="trailing" constant="8" id="XJp-hp-HHU"/>
                                     <constraint firstAttribute="trailing" secondItem="Kny-HU-Nnq" secondAttribute="trailing" constant="175" id="XlF-9Q-EQ1"/>
@@ -430,18 +493,23 @@
                                     <constraint firstItem="og0-zF-20e" firstAttribute="top" secondItem="4rz-1F-jpk" secondAttribute="top" id="hMw-1C-zre"/>
                                     <constraint firstItem="TcO-eb-Ka0" firstAttribute="trailing" secondItem="b5c-DK-dw5" secondAttribute="trailing" id="hks-O5-PSH"/>
                                     <constraint firstItem="Ahl-7W-EoC" firstAttribute="leading" secondItem="Naq-6b-V6O" secondAttribute="trailing" constant="8" id="hnb-yq-BcW"/>
+                                    <constraint firstItem="KYA-mt-699" firstAttribute="trailing" secondItem="zer-Qx-J0A" secondAttribute="trailing" id="hoS-al-DhQ"/>
                                     <constraint firstItem="UaM-Wk-8PY" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="40" id="iIh-Qi-5Wz"/>
-                                    <constraint firstItem="lh4-DH-7Hw" firstAttribute="top" secondItem="TcO-eb-Ka0" secondAttribute="bottom" constant="18" id="iUc-9D-SbH"/>
                                     <constraint firstItem="VWs-7c-3jQ" firstAttribute="height" secondItem="yEd-1v-2NA" secondAttribute="height" id="iW8-ZI-yaj"/>
                                     <constraint firstItem="VWs-7c-3jQ" firstAttribute="leading" secondItem="yEd-1v-2NA" secondAttribute="trailing" constant="8" id="iaP-3o-JPc"/>
                                     <constraint firstItem="JbM-Eo-FIz" firstAttribute="top" secondItem="aQD-mi-j2Y" secondAttribute="bottom" constant="26" id="ieV-sY-cL2"/>
                                     <constraint firstItem="JGH-kD-1fZ" firstAttribute="top" secondItem="Kny-HU-Nnq" secondAttribute="bottom" priority="750" constant="8" id="j7G-ok-ZDC"/>
                                     <constraint firstItem="GTb-yZ-Jss" firstAttribute="height" secondItem="VWs-7c-3jQ" secondAttribute="height" id="jOV-UU-SWS"/>
                                     <constraint firstItem="JbM-Eo-FIz" firstAttribute="trailing" secondItem="UaM-Wk-8PY" secondAttribute="trailing" id="jcL-jL-JNs"/>
+                                    <constraint firstItem="KYA-mt-699" firstAttribute="leading" secondItem="zer-Qx-J0A" secondAttribute="leading" id="lIX-Pq-pOw"/>
                                     <constraint firstAttribute="trailing" secondItem="YLe-Bv-xZp" secondAttribute="trailing" constant="8" id="lju-iN-NM8"/>
-                                    <constraint firstAttribute="trailing" secondItem="lh4-DH-7Hw" secondAttribute="trailing" constant="40" id="oKk-IS-MX3"/>
+                                    <constraint firstItem="4qM-ud-bxy" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="40" id="luY-Ch-bYt"/>
+                                    <constraint firstItem="lh4-DH-7Hw" firstAttribute="top" secondItem="KYA-mt-699" secondAttribute="bottom" priority="750" constant="8" id="mUi-Xb-WI2"/>
+                                    <constraint firstAttribute="trailing" secondItem="4qM-ud-bxy" secondAttribute="trailing" constant="8" id="oFu-W5-ZrN"/>
                                     <constraint firstItem="JbM-Eo-FIz" firstAttribute="leading" secondItem="UaM-Wk-8PY" secondAttribute="leading" id="sAB-pY-vqq"/>
-                                    <constraint firstItem="lh4-DH-7Hw" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="40" id="so7-aa-YlY"/>
+                                    <constraint firstItem="KYA-mt-699" firstAttribute="top" secondItem="zer-Qx-J0A" secondAttribute="bottom" constant="12" id="sca-oI-bf6"/>
+                                    <constraint firstItem="4qM-ud-bxy" firstAttribute="top" secondItem="5tF-Mc-Yy8" secondAttribute="bottom" constant="12" id="slD-1v-PXv"/>
+                                    <constraint firstItem="nNP-6D-ivw" firstAttribute="top" secondItem="KYA-mt-699" secondAttribute="bottom" priority="250" constant="12" id="swH-3J-5Pg"/>
                                     <constraint firstItem="nNP-6D-ivw" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="40" id="t4D-1v-Ytx"/>
                                     <constraint firstItem="Kny-HU-Nnq" firstAttribute="top" secondItem="RSl-US-WJZ" secondAttribute="bottom" constant="2" id="t7W-aq-rxf"/>
                                     <constraint firstItem="x4f-m4-lYC" firstAttribute="top" secondItem="JGH-kD-1fZ" secondAttribute="bottom" priority="750" constant="12" id="uzd-9L-6dv"/>
@@ -449,9 +517,10 @@
                                     <constraint firstItem="yEd-1v-2NA" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="83" id="wLF-6h-YjZ"/>
                                     <constraint firstAttribute="trailing" secondItem="og0-zF-20e" secondAttribute="trailing" constant="68" id="wbm-4l-hca"/>
                                     <constraint firstAttribute="bottom" secondItem="x4f-m4-lYC" secondAttribute="bottom" constant="157" id="xWK-ed-f0Y"/>
-                                    <constraint firstItem="dNF-wo-cIw" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="105" id="yH4-w5-P2v"/>
+                                    <constraint firstItem="dNF-wo-cIw" firstAttribute="leading" secondItem="P6g-Ip-7HG" secondAttribute="leading" constant="40" id="yH4-w5-P2v"/>
                                     <constraint firstAttribute="trailing" secondItem="RSl-US-WJZ" secondAttribute="trailing" constant="152" id="yPb-hB-Fc9"/>
                                     <constraint firstItem="GTb-yZ-Jss" firstAttribute="width" secondItem="VWs-7c-3jQ" secondAttribute="width" id="zUH-a6-geI"/>
+                                    <constraint firstItem="lh4-DH-7Hw" firstAttribute="leading" secondItem="KYA-mt-699" secondAttribute="leading" id="zn7-Hd-JcU"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -467,14 +536,21 @@
                     <size key="freeformSize" width="320" height="1300"/>
                     <connections>
                         <outlet property="completeWorkRadioButton" destination="Qxn-2i-1Fg" id="O6l-oN-83A"/>
+                        <outlet property="constraintDignityTextViewToOther" destination="mUi-Xb-WI2" id="nFS-az-gjn"/>
+                        <outlet property="constraintOtherDignityToLimitations" destination="swH-3J-5Pg" id="iGu-VK-lmg"/>
                         <outlet property="constraintOtherToMark" destination="YrA-0I-HYh" id="Z0y-Ev-A0D"/>
                         <outlet property="constraintTextViewToMerk" destination="uzd-9L-6dv" id="3Lt-DI-ZDb"/>
                         <outlet property="constraintTextViewToOther" destination="j7G-ok-ZDC" id="Amp-cr-OoN"/>
+                        <outlet property="contraintDignityTextViewToLimitations" destination="3LL-TR-UgL" id="x4w-aN-n4S"/>
                         <outlet property="dignityTextView" destination="lh4-DH-7Hw" id="fzO-4y-Sns"/>
                         <outlet property="directionRadioButton" destination="yX0-Ml-bfk" id="PvX-KD-aIO"/>
                         <outlet property="groupLabel" destination="WBd-zg-eXb" id="wlE-EY-Oor"/>
+                        <outlet property="highCompetentionRadioButton" destination="zer-Qx-J0A" id="c6J-st-ChX"/>
+                        <outlet property="independenceRadioButton" destination="5tF-Mc-Yy8" id="Qiy-AA-Nvk"/>
                         <outlet property="nameLabel" destination="31v-VY-JEF" id="SdP-jp-DNb"/>
+                        <outlet property="otherDignityRadioButton" destination="KYA-mt-699" id="5xp-Uh-33C"/>
                         <outlet property="radioBtn" destination="RSl-US-WJZ" id="3HY-TJ-adn"/>
+                        <outlet property="responsibilityRadioButton" destination="4qM-ud-bxy" id="Kj2-PK-oxd"/>
                         <outlet property="scrollView" destination="P6g-Ip-7HG" id="zhG-JS-Pj3"/>
                         <outlet property="textView" destination="JGH-kD-1fZ" id="A7o-BF-8zi"/>
                         <outlet property="textWorkRadioButton" destination="ObJ-fc-srF" id="mTf-Lg-8Mg"/>
@@ -549,7 +625,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09p-IK-Hdx">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Диапазон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIA-A8-yT0">
                                         <rect key="frame" x="16" y="260" width="288" height="21"/>
@@ -774,4 +850,7 @@
         <image name="search-2" width="256" height="256"/>
         <image name="settings-cogwheel-button" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="RGg-aj-170"/>
+    </inferredMetricsTieBreakers>
 </document>

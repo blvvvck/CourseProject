@@ -16,13 +16,15 @@ class CellModelImplementation: CellModel {
     var theme: String
     var course: String
     var email: String
+    var isCompleted: Bool
     
-    init(id: Int, name: String, group: String, theme: String, course: String, email: String) {
+    init(id: Int, name: String, group: String, theme: String, course: String, email: String, isCompleted: Bool) {
         self.id = id
         self.name = name
         self.group = group
         self.theme = theme
         self.course = course
         self.email = email
+        self.isCompleted = isCompleted
     }
 }

@@ -19,7 +19,9 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var groupLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
-    
+    @IBOutlet weak var highCompetentionRadioButton: DLRadioButton!
+    @IBOutlet weak var responsibilityRadioButton: DLRadioButton!
+    @IBOutlet weak var independenceRadioButton: DLRadioButton!
     @IBOutlet weak var dignityTextView: UITextView!
     @IBOutlet weak var directionRadioButton: DLRadioButton!
     @IBOutlet weak var workRatingRadioButton: DLRadioButton!
@@ -28,11 +30,19 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
     @IBOutlet weak var constraintTextViewToMerk: NSLayoutConstraint!
     @IBOutlet weak var constraintTextViewToOther: NSLayoutConstraint!
     @IBOutlet weak var constraintOtherToMark: NSLayoutConstraint!
+    @IBOutlet weak var otherDignityRadioButton: DLRadioButton!
+    @IBOutlet weak var constraintDignityTextViewToOther: NSLayoutConstraint!
+    @IBOutlet weak var constraintOtherDignityToLimitations: NSLayoutConstraint!
+    @IBOutlet weak var contraintDignityTextViewToLimitations: NSLayoutConstraint!
+    
     let studentDbManager = StudentDbManager()
     var id = 0
     var student: Student!
     let settingsDbManager = DbManagerImplementation()
     var settings: SettingsModel!
+    var realizationMark = ""
+    var textMark = ""
+    var completeMark = ""
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +50,10 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
         constraintTextViewToMerk.priority = .defaultLow
         constraintTextViewToOther.priority = .defaultLow
         constraintOtherToMark.priority = .defaultHigh
+        constraintDignityTextViewToOther.priority = .defaultLow
+        contraintDignityTextViewToLimitations.priority = .defaultLow
+        constraintOtherDignityToLimitations.priority = .defaultHigh
+        dignityTextView.isHidden = true
         textView.isHidden = true
         radioBtn.isSelected = true
         moduleInput = self
@@ -48,6 +62,8 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
         settings = settingsDbManager.getDataFromDB()
         // Do any additional setup after loading the view.
         prepareStudentInfo()
+        highCompetentionRadioButton.titleLabel?.numberOfLines = 0
+        responsibilityRadioButton.titleLabel?.numberOfLines = 0
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(actionTap))
         self.view.addGestureRecognizer(gesture)
@@ -102,10 +118,11 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
         completeWorkRadioButton.isMultipleTouchEnabled = false
         workRatingRadioButton.isMultipleSelectionEnabled = false
         workRatingRadioButton.isMultipleTouchEnabled = false
-        textWorkRadioButton.isMultipleSelectionEnabled = false
-        textWorkRadioButton.isMultipleTouchEnabled = false
+        textWorkRadioButton.isMultipleSelectionEnabled = true
+        textWorkRadioButton.isMultipleTouchEnabled = true
         directionRadioButton.isMultipleSelectionEnabled = false
         directionRadioButton.isMultipleTouchEnabled = false
+        independenceRadioButton.isMultipleTouchEnabled = true
     }
     
     
@@ -125,6 +142,61 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
             constraintTextViewToMerk.priority = .defaultHigh
             constraintTextViewToOther.priority = .defaultHigh
             constraintOtherToMark.priority = .defaultLow
+        }
+        if (sender.tag == 3) {
+            print(sender.titleLabel?.text)
+            print("Другие достоинства")
+            dignityTextView.isHidden = false
+            
+            constraintDignityTextViewToOther.priority = .defaultHigh
+            contraintDignityTextViewToLimitations.priority = .defaultHigh
+            constraintOtherDignityToLimitations.priority = .defaultLow
+            
+            independenceRadioButton.isSelected = false
+            responsibilityRadioButton.isSelected = false
+            highCompetentionRadioButton.isSelected = false
+            
+        }
+        
+        if (sender.tag == 4 || sender.tag == 5 || sender.tag == 6) {
+            dignityTextView.isHidden = true
+            
+            constraintDignityTextViewToOther.priority = .defaultLow
+            contraintDignityTextViewToLimitations.priority = .defaultLow
+            constraintOtherDignityToLimitations.priority = .defaultHigh
+            
+            otherDignityRadioButton.isSelected = false
+        }
+        
+//        if (sender.tag == 4) {
+//            if independenceRadioButton.isSelected == true {
+//                independenceRadioButton.isSelected = false
+//            } else if independenceRadioButton.isSelected == false {
+//                independenceRadioButton.isSelected = true
+//            }
+//        }
+        if (sender.tag == 10) {
+            realizationMark = "5"
+        } else if (sender.tag == 11) {
+            realizationMark = "4"
+        } else if (sender.tag == 12) {
+            realizationMark = "3"
+        }
+        
+        if (sender.tag == 14) {
+            textMark = "5"
+        } else  if (sender.tag == 15) {
+            textMark = "4"
+        } else if (sender.tag == 16) {
+            textMark = "3"
+        }
+        
+        if (sender.tag == 18) {
+            completeMark = "5"
+        } else if (sender.tag == 19) {
+            completeMark = "4"
+        } else if (sender.tag == 20) {
+            completeMark = "3"
         }
         
     }
@@ -146,32 +218,43 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
         let pdfReview = CompleteReviewViewController()
         var limitationsText = ""
         var conclusionText = ""
-        //pdfReview.name = "Аня"
+        var dignityText = ""
         if radioBtn.titleLabel?.text == "Не выявлено" {
             limitationsText = "Существенных недостатков в работе выявлено не было"
         } else {
             limitationsText = textView.text
         }
-        if completeWorkRadioButton.titleLabel?.text == "5" {
-            conclusionText = "Данная работа соответствует требования и заслуживает оценки отлично"
-        } else if completeWorkRadioButton.titleLabel?.text == "4" {
-            conclusionText = "Данная работа соответствует требования и заслуживает оценки хорошо"
-        } else if completeWorkRadioButton.titleLabel?.text == "3" {
-            conclusionText = "Данная работа соответствует требования и заслуживает оценки удовлетворительно"
+        
+        if completeMark == "5" {
+            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки отлично"
+        } else if completeMark == "4" {
+            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки хорошо"
+        } else if completeMark == "3" {
+            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки удовлетворительно"
         }
-        let reviewModel = ReviewModel(theme: student.theme, studentName: student.name, institute: "Высшая школа информационных технологий и информационных систем", direction: (directionRadioButton.titleLabel?.text)!, mentor: settings.mentor, workRating: (workRatingRadioButton.titleLabel?.text)!, textRating: (textWorkRadioButton.titleLabel?.text)!, dignity: dignityTextView.text, limitations: limitationsText, conclusion: conclusionText, studentEmail: student.email)
+        
+        if (independenceRadioButton.isSelected == true && responsibilityRadioButton.isSelected == false && highCompetentionRadioButton.isSelected == false) {
+            dignityText = "В рамках работы над курсовым проектом студент продемонстрировал самостоятельность"
+        } else if (responsibilityRadioButton.isSelected == true && independenceRadioButton.isSelected == false && highCompetentionRadioButton.isSelected == false ) {
+            dignityText = "В рамках работы над курсовым проектом студент продемонстрировал ответственный подход к решению поставленных задач"
+        } else if (highCompetentionRadioButton.isSelected == true && independenceRadioButton.isSelected == false && responsibilityRadioButton.isSelected == false) {
+            dignityText = "В рамках работы над курсовым проектом продемонстрировал высокий уровень профессиональных компетенций"
+        } else if (independenceRadioButton.isSelected == true && responsibilityRadioButton.isSelected == true && highCompetentionRadioButton.isSelected == false) {
+            dignityText = "В рамках работы над курсовым проектом студент продемонстрировал самостоятельность и ответственный подход к решению поставленных задач"
+        } else if (independenceRadioButton.isSelected == true && responsibilityRadioButton.isSelected == false && highCompetentionRadioButton.isSelected == true) {
+            dignityText = "В рамках работы над курсовым проектом студент продемонстрировал самостоятельность и высокий уровень профессиональных компетенций"
+        } else if (independenceRadioButton.isSelected == false && responsibilityRadioButton.isSelected == true && highCompetentionRadioButton.isSelected == true) {
+            dignityText = "В рамках работы над курсовым проектом студент продемонстрировал ответственный подход к решению поставленных задач и высокий уровень профессиональных компетенций"
+        } else if (independenceRadioButton.isSelected == true && responsibilityRadioButton.isSelected == true && highCompetentionRadioButton.isSelected == true) {
+            dignityText = "В рамках работы над курсовым проектом студент продемонстрировал самостоятельность, ответственный подход к решению поставленных задач и высокий уровень профессиональных компетенций"
+        } else if (independenceRadioButton.isSelected == false && responsibilityRadioButton.isSelected == false && highCompetentionRadioButton.isSelected == false && otherDignityRadioButton.isSelected == true) {
+            dignityText = dignityTextView.text
+        }
+            
+        let reviewModel = ReviewModel(theme: student.theme, studentName: student.name, institute: "Высшая школа информационных технологий и информационных систем", direction: (directionRadioButton.titleLabel?.text)!, mentor: settings.mentor, workRating: realizationMark, textRating: textMark, dignity: dignityText, limitations: limitationsText, conclusion: conclusionText, studentEmail: student.email, studentId: student.id)
         
         pdfReview.reviewModel = reviewModel
         navigationController?.pushViewController(pdfReview as! UIViewController, animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

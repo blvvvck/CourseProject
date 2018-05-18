@@ -14,5 +14,5 @@ protocol SettingsViewInput: class {
     func setLink(with link: String)
     func setSheetName(with sheetName: String)
     func setRange(with range: String)
-    
+    func dismisToStudent()
 }

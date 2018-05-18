@@ -31,7 +31,7 @@ class CourseInteractor: CourseInteractorInput {
         let students = studentDbManager.getStudentsByCourse(with: course)
         if let checkedStudents = students {
             for student in checkedStudents {
-                let cellModel = CellModelImplementation(id: student.id, name: student.name, group: student.group, theme: student.theme, course: student.course, email: student.email)
+                let cellModel = CellModelImplementation(id: student.id, name: student.name, group: student.group, theme: student.theme, course: student.course, email: student.email, isCompleted: student.isCompleted)
                 cellModels.append(cellModel)
             }
             self.presenter.didFinishGetStudents(with: cellModels)

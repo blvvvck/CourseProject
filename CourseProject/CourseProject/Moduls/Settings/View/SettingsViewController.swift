@@ -109,4 +109,8 @@ class SettingsViewController: UIViewController, SettingsViewInput, UITextFieldDe
         presenter.saveSettings(with: mentorTextField.text!, and: linkTextField.text!, and: sheetNameTextField.text!, and: rangeTextField.text!)
     }
     
+    func dismisToStudent() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }

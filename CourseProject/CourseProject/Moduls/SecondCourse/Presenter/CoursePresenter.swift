@@ -20,6 +20,7 @@ class CoursePresenter: CourseViewOutput, CourseInteractorOutput {
     }
     
     func didFinishGetStudents(with models: [CellModelImplementation]) {
+        view.reloadTableView()
         view.set(cellModels: models)
         view.reloadTableView()
     }

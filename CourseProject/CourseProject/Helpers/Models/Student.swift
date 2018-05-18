@@ -17,6 +17,7 @@ class Student: Object {
     @objc dynamic var theme: String = ""
     @objc dynamic var course: String = ""
     @objc dynamic var email: String = ""
+    @objc dynamic var isCompleted: Bool = false
     
     override static func primaryKey() -> String? {
         return "id"

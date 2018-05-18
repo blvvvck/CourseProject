@@ -27,9 +27,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     // If modifying these scopes, delete your previously saved credentials by
     // resetting the iOS simulator or uninstall the app.
     private let scopes = [kGTLRAuthScopeSheetsSpreadsheetsReadonly]
-    
     private let service = GTLRSheetsService()
-    //let signInButton = GIDSignInButton()
     let output = UITextView()
     var enitys = [ResultStruct]()
 
@@ -51,13 +49,13 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         //view.addSubview(signInButton)
         
         // Add a UITextView to display output.
-        output.frame = view.bounds
-        output.isEditable = false
-        output.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
-        output.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        output.isHidden = true
-        view.addSubview(output);
-        addCircleView()
+//        output.frame = view.bounds
+//        output.isEditable = false
+//        output.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+//        output.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+//        output.isHidden = true
+//        view.addSubview(output);
+//        addCircleView()
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
@@ -66,7 +64,14 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
             showAlert(title: "Authentication Error", message: error.localizedDescription)
             self.service.authorizer = nil
         } else {
-            performSegue(withIdentifier: "mainScreenSegue", sender: nil)
+            let flag = UserDefaults.standard.bool(forKey: "firstAppStart")
+            if flag == false || flag == nil {
+                performSegue(withIdentifier: "toSettings", sender: nil)
+
+            } else {
+                performSegue(withIdentifier: "mainScreenSegue", sender: nil)
+
+            }
             //self.signInButton.isHidden = true
             self.output.isHidden = false
             self.service.authorizer = user.authentication.fetcherAuthorizer()

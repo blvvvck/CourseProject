@@ -21,6 +21,7 @@ struct ReviewModel {
     let limitations: String
     let conclusion: String
     let studentEmail: String
+    let studentId: Int
     
     
 }
