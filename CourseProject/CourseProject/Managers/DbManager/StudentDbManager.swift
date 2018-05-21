@@ -55,8 +55,4 @@ class StudentDbManager {
         }
     }
     
-//    func getDefaultDataFromDB() -> SettingsModel {
-//        let defaultSettingsModel = SettingsModel(value: ["mentor": defaultMentor, "link": defaultLink, "sheetName": defaultSheetName, "range": defaultRange ])
-//        return defaultSettingsModel
-//    }
 }

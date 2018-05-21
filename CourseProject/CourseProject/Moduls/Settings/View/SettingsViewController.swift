@@ -25,13 +25,9 @@ class SettingsViewController: UIViewController, SettingsViewInput, UITextFieldDe
         mentorTextField.delegate = self
         linkTextField.delegate = self
         
-        // set return key styles
         mentorTextField.returnKeyType = UIReturnKeyType.done
         linkTextField.returnKeyType = UIReturnKeyType.done
         
-        // only enable textField2 if textField1 is non-empty
-        
-        // only enable 'go' key of textField2 if the field itself is non-empty
         linkTextField.enablesReturnKeyAutomatically = true
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(actionTap))

@@ -19,13 +19,25 @@ class FirstCourseViewController: UIViewController, CourseViewInput {
     var studentCourse: String = "2"
     var tableView = UITableView()
     var studentDbManager: StudentDbManager = StudentDbManager()
+    var control = BetterSegmentedControl()
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+            #selector(self.handleRefresh(_:)),
+                                 for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = UIColor.red
+        
+        return refreshControl
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         presenter.viewIsReady(with: studentCourse)
+        self.tableView.addSubview(self.refreshControl)
     
-        let control = BetterSegmentedControl(
+        control = BetterSegmentedControl(
             frame: CGRect(x: 0.0, y: 64.0, width: view.bounds.width, height: 35.0),
             titles: ["1 курс", "2 курс", "3 курс"],
             index: 0,
@@ -39,26 +51,17 @@ class FirstCourseViewController: UIViewController, CourseViewInput {
         control.addTarget(self, action: #selector(self.navigationSegmentedControlValueChanged(_:)), for: .valueChanged)
         view.addSubview(control)
         
+        
         var students = studentDbManager.getDataFromDB()
         for student in students {
             print(String(describing: student))
         }
-//        for student in students {
-//
-//        }
-//        let testSudents = studentDbManager.getStudentsByCourse(with: "4")
-//        for testStudent in testSudents {
-//            print("======4КУРС=====")
-//            print(testSudents)
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         anitmateTable()
-        //tableView.reloadData()
-        //presenter.viewIsReady(with: studentCourse)
-        //tableView.reloadData()
+
     }
     
     @objc func navigationSegmentedControlValueChanged(_ sender: BetterSegmentedControl) {
@@ -153,6 +156,13 @@ class FirstCourseViewController: UIViewController, CourseViewInput {
             delayCounter += 1
         }
     }
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        
+        presenter.viewIsReady(with: String(control.index + 2))
+        print("Refreshing")
+        refreshControl.endRefreshing()
+    }
 }
 
 extension FirstCourseViewController: UITableViewDelegate {
@@ -160,15 +170,4 @@ extension FirstCourseViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.didSelectStudent(with: dataSource.cellModels[indexPath.row].id) 
     }
-    
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        cell.alpha = 0
-//        let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
-//        cell.layer.transform = transform
-//
-//        UIView.animate(withDuration: 0.5) {
-//            cell.alpha = 1.0
-//            cell.layer.transform = CATransform3DIdentity
-//        }
-//    }
 }

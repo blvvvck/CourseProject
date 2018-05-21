@@ -40,9 +40,9 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
     var student: Student!
     let settingsDbManager = DbManagerImplementation()
     var settings: SettingsModel!
-    var realizationMark = ""
-    var textMark = ""
-    var completeMark = ""
+    var realizationMark = "5"
+    var textMark = "5"
+    var completeMark = "5"
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -168,13 +168,6 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
             otherDignityRadioButton.isSelected = false
         }
         
-//        if (sender.tag == 4) {
-//            if independenceRadioButton.isSelected == true {
-//                independenceRadioButton.isSelected = false
-//            } else if independenceRadioButton.isSelected == false {
-//                independenceRadioButton.isSelected = true
-//            }
-//        }
         if (sender.tag == 10) {
             realizationMark = "5"
         } else if (sender.tag == 11) {
@@ -216,9 +209,9 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
 
     @IBAction func generate(_ sender: Any) {
         let pdfReview = CompleteReviewViewController()
-        var limitationsText = ""
-        var conclusionText = ""
-        var dignityText = ""
+        var limitationsText = "5"
+        var conclusionText = "5"
+        var dignityText = "5"
         if radioBtn.titleLabel?.text == "Не выявлено" {
             limitationsText = "Существенных недостатков в работе выявлено не было"
         } else {

@@ -46,7 +46,7 @@ class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewContro
         
         let document = ILPDFDocument(resource:"courseProject23.pdf")
         self.document = document
-        let test = document.forms.forms(withName: "theme")
+        
         let studentNameForm = document.forms.forms(withName: "studentName")
         studentNameForm.first?.value = reviewModel.studentName
         
@@ -238,10 +238,6 @@ class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewContro
         print(self.pdfView?.pdfView.subviews)
 
         print(reviewModel)
-        //self.pdfView?.pdfView.frame.size.height = 568
-        //self.pdfView?.pdfView.frame.size.width = 320
-
-
         
     }
     
@@ -284,28 +280,12 @@ class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewContro
         self.navigationController?.popViewController(animated: true)
         self.navigationController?.popToRootViewController(animated: true)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     private func alert(title: String, msg: String) {
         let alertConntroller = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         alertConntroller.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alertConntroller, animated: true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

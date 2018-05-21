@@ -23,5 +23,4 @@ struct ReviewModel {
     let studentEmail: String
     let studentId: Int
     
-    
 }

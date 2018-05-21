@@ -69,7 +69,6 @@
 		955E2A5F20A447F100C65B4A /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E2A5E20A447F100C65B4A /* ReviewModel.swift */; };
 		955E2A6720A4541300C65B4A /* courseProject1 13-07-12-555.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 955E2A6620A4541200C65B4A /* courseProject1 13-07-12-555.pdf */; };
 		955E2A6920A4550A00C65B4A /* courseProject2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 955E2A6820A4550900C65B4A /* courseProject2.pdf */; };
-		955E2A6B20A46BE600C65B4A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E2A6A20A46BE600C65B4A /* TestViewController.swift */; };
 		955E2A6D20A4AA8200C65B4A /* courseProject3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 955E2A6C20A4AA8000C65B4A /* courseProject3.pdf */; };
 		9561E97C209B6C5100DB516B /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561E97B209B6C5100DB516B /* Student.swift */; };
 		9561E97E209B6D5100DB516B /* StudentDbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561E97D209B6D5100DB516B /* StudentDbManager.swift */; };
@@ -148,7 +147,6 @@
 		955E2A5E20A447F100C65B4A /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		955E2A6620A4541200C65B4A /* courseProject1 13-07-12-555.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "courseProject1 13-07-12-555.pdf"; sourceTree = "<group>"; };
 		955E2A6820A4550900C65B4A /* courseProject2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = courseProject2.pdf; path = ../../courseProject2.pdf; sourceTree = "<group>"; };
-		955E2A6A20A46BE600C65B4A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		955E2A6C20A4AA8000C65B4A /* courseProject3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject3.pdf; sourceTree = "<group>"; };
 		9561E97B209B6C5100DB516B /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		9561E97D209B6D5100DB516B /* StudentDbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDbManager.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				955ACD70207EBEEF006F7F26 /* ViewController.swift */,
-				955E2A6A20A46BE600C65B4A /* TestViewController.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -708,7 +705,6 @@
 				95010109207FF404007EE398 /* SettingsViewController.swift in Sources */,
 				950101552080922D007EE398 /* CourseInteractor.swift in Sources */,
 				95010114207FF637007EE398 /* SettingsInteractor.swift in Sources */,
-				955E2A6B20A46BE600C65B4A /* TestViewController.swift in Sources */,
 				9561E97C209B6C5100DB516B /* Student.swift in Sources */,
 				95010116207FF642007EE398 /* SettingsInteractorInput.swift in Sources */,
 				953112982087F9F400CBA939 /* CourseRouterInput.swift in Sources */,

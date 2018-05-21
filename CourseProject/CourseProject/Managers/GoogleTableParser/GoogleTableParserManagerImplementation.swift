@@ -35,7 +35,7 @@ class GoogleTableParserManagerImplementation: GoogleTableParserManager {
         
         if (flagForParseStudents == false || students.count == 0) {
             service.executeQuery(query) { [weak self] (ticket, result, error) in
-                
+                    
                 
                 guard let strongSelf = self else { return }
                 strongSelf.students.removeAll()
@@ -44,12 +44,12 @@ class GoogleTableParserManagerImplementation: GoogleTableParserManager {
                     print("Error: \(String(describing: error?.localizedDescription))")
                 } else {
                     let castedResult = result as! GTLRSheets_ValueRange
+                        
                     let rows = castedResult.values!
-                    
-                    
                     
                     for row in rows {
                         let student = StudentModel(name: row[0] as! String, group: row[1] as! String, theme: row[2] as! String, course: row[3] as! String, email: row[4] as! String)
+                        
                         //REALM
                         let studentRealm = Student()
                         studentRealm.id = Student().incrementID()
