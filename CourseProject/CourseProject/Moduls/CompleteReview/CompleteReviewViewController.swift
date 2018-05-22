@@ -65,22 +65,19 @@ class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewContro
                     secondTheme.append(String(element))
                 }
             }
+            let themeForm = document.forms.forms(withName: "theme1")
+            var test1 = firstTheme.map { String($0)
+                }.joined(separator: " ")
+            themeForm.first?.value = String(test1)
+            
+            let theme2Form = document.forms.forms(withName: "theme2")
+            var test2 = secondTheme.map { String($0)
+                }.joined(separator: " ")
+            theme2Form.first?.value = String(test2)
         } else {
             let themeForm = document.forms.forms(withName: "theme1")
             themeForm.first?.value = reviewModel.theme
         }
-        
-        
-        let themeForm = document.forms.forms(withName: "theme1")
-        var test1 = firstTheme.map { String($0)
-        }.joined(separator: " ")
-        themeForm.first?.value = String(test1)
-        
-        let theme2Form = document.forms.forms(withName: "theme2")
-        var test2 = secondTheme.map { String($0)
-            }.joined(separator: " ")
-        theme2Form.first?.value = String(test2)
-        
         
         //заполнение достоинств
         let advantagesCharacters = Array(reviewModel.dignity)
@@ -132,40 +129,6 @@ class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewContro
         let advantagesForm3 = document.forms.forms(withName: "advantages3")
         var advantagesText3 = thirdAdvantages.map { String($0)}.joined(separator: " ")
         advantagesForm3.first?.value = String(advantagesText3)
-        
-//        let themeForm = document.forms.forms(withName: "theme1")
-//        themeForm.first?.value = String(theme1)
-//
-//        let theme2Form = document.forms.forms(withName: "theme2")
-//        theme2Form.first?.value = String(theme2)
-        
-        
-        
-        //заполнение отмеченных достоинств
-//        let advantagesCharacters = Array(reviewModel.dignity)
-//        let advantages1 = advantagesCharacters[0..<65]
-//        let advantagesForm = document.forms.forms(withName: "advantages1")
-//        advantagesForm.first?.value = String(advantages1)
-//
-//        if advantagesCharacters.count > 65  {
-//            var advantages2: ArraySlice<Character>
-//            if advantagesCharacters.count < 150 {
-//                advantages2 = advantagesCharacters[65..<advantagesCharacters.count]
-//            } else {
-//                advantages2 = advantagesCharacters[65..<150]
-//            }
-//            let advatages2Form = document.forms.forms(withName: "advantages2")
-//            advatages2Form.first?.value = String(advantages2)
-//        }
-//
-//        if advantagesCharacters.count > 150 {
-//            let advantages3 = advantagesCharacters[150..<advantagesCharacters.count]
-//            let advantages3Form = document.forms.forms(withName: "advantages3")
-//            advantages3Form.first?.value = String(advantages3)
-//        }
-        
-        
-        //let advatnages3 = advantagesCharacters[150..<advantagesCharacters.count]
 
         let limitationsForm = document.forms.forms(withName: "limitations1")
         limitationsForm.first?.value = reviewModel.limitations
@@ -245,7 +208,7 @@ class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewContro
         if MFMailComposeViewController.canSendMail() {
             let subject = "Отзыв руководителя курсовой"
             let messageBody = "Отзыв руководителя курсовой"
-            let toRecipients = ["wrooneyn10@gmail.com"]
+            let toRecipients = [reviewModel.studentEmail]
             
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self

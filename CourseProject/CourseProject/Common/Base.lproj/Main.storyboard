@@ -114,11 +114,8 @@
                                         <rect key="frame" x="8" y="40" width="304" height="94"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31v-VY-JEF">
-                                                <rect key="frame" x="8" y="8" width="224" height="20.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="224" id="ZDD-Ps-tv1"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="8" y="8" width="288" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -152,6 +149,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="31v-VY-JEF" secondAttribute="trailing" constant="8" id="BP3-kK-xJD"/>
                                             <constraint firstItem="WBd-zg-eXb" firstAttribute="leading" secondItem="kco-R8-mtG" secondAttribute="trailing" constant="8" id="GqH-Nv-P78"/>
                                             <constraint firstAttribute="bottom" secondItem="52n-u6-qHK" secondAttribute="bottom" constant="8" id="Rcl-kX-uzK"/>
                                             <constraint firstItem="757-4t-cfF" firstAttribute="leading" secondItem="kco-R8-mtG" secondAttribute="leading" id="TuN-FX-ocj"/>
@@ -625,7 +623,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09p-IK-Hdx">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Диапазон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIA-A8-yT0">
                                         <rect key="frame" x="16" y="260" width="288" height="21"/>
@@ -851,6 +849,6 @@
         <image name="settings-cogwheel-button" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RGg-aj-170"/>
+        <segue reference="qol-rH-9Ow"/>
     </inferredMetricsTieBreakers>
 </document>

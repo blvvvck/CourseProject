@@ -50,10 +50,10 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
         constraintTextViewToMerk.priority = .defaultLow
         constraintTextViewToOther.priority = .defaultLow
         constraintOtherToMark.priority = .defaultHigh
-        constraintDignityTextViewToOther.priority = .defaultLow
-        contraintDignityTextViewToLimitations.priority = .defaultLow
-        constraintOtherDignityToLimitations.priority = .defaultHigh
-        dignityTextView.isHidden = true
+        //constraintDignityTextViewToOther.priority = .defaultLow
+        //contraintDignityTextViewToLimitations.priority = .defaultLow
+        //constraintOtherDignityToLimitations.priority = .defaultHigh
+        //dignityTextView.isHidden = true
         textView.isHidden = true
         radioBtn.isSelected = true
         moduleInput = self
@@ -64,6 +64,7 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
         prepareStudentInfo()
         highCompetentionRadioButton.titleLabel?.numberOfLines = 0
         responsibilityRadioButton.titleLabel?.numberOfLines = 0
+        otherDignityRadioButton.isSelected = true
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(actionTap))
         self.view.addGestureRecognizer(gesture)
@@ -219,11 +220,11 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
         }
         
         if completeMark == "5" {
-            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки отлично"
+            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки \("«")отлично\("»")"
         } else if completeMark == "4" {
-            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки хорошо"
+            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки хорошо \("«")хорошо\("»")"
         } else if completeMark == "3" {
-            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки удовлетворительно"
+            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки \("«")удовлетворительно\("»")"
         }
         
         if (independenceRadioButton.isSelected == true && responsibilityRadioButton.isSelected == false && highCompetentionRadioButton.isSelected == false) {
@@ -242,6 +243,12 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
             dignityText = "В рамках работы над курсовым проектом студент продемонстрировал самостоятельность, ответственный подход к решению поставленных задач и высокий уровень профессиональных компетенций"
         } else if (independenceRadioButton.isSelected == false && responsibilityRadioButton.isSelected == false && highCompetentionRadioButton.isSelected == false && otherDignityRadioButton.isSelected == true) {
             dignityText = dignityTextView.text
+        }
+        
+        if dignityText == "" {
+            let alert = UIAlertController(title: "Ошибка", message: "Заполните все поля", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
         }
             
         let reviewModel = ReviewModel(theme: student.theme, studentName: student.name, institute: "Высшая школа информационных технологий и информационных систем", direction: (directionRadioButton.titleLabel?.text)!, mentor: settings.mentor, workRating: realizationMark, textRating: textMark, dignity: dignityText, limitations: limitationsText, conclusion: conclusionText, studentEmail: student.email, studentId: student.id)
