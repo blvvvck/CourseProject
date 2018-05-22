@@ -12,4 +12,5 @@ protocol SettingsViewOutput: class {
     
     func viewIsReady()
     func saveSettings(with mentor: String, and link: String, and sheetName: String, and range: String)
+    
 }

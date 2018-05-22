@@ -8,17 +8,19 @@
 
 import UIKit
 import GoogleSignIn
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        UserDefaults.standard.set(false, forKey: "isAddedStudents")
+        UserDefaults.standard.set(false, forKey: "isAddedSettings")
         GIDSignIn.sharedInstance().clientID = "986855244295-f3128ajn936ejbdv7n6senv6bian7dor.apps.googleusercontent.com"
-        //UserDefaults.standard.setValue(GIDSignIn.sharedInstance().currentUser, forKey: "currentUser") 
+        //UserDefaults.standard.setValue(GIDSignIn.sharedInstance().currentUser, forKey: "currentUser")
+        IQKeyboardManager.shared.enable = true
         return true
     }
     

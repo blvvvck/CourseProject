@@ -31,6 +31,7 @@ class StudentsDataSource: NSObject, StudentsDataSourceInput {
         let cell = tableView.dequeueReusableCell(withIdentifier: studentCellIdentifier, for: indexPath) as! StudentTableViewCell
         let model = cellModels[indexPath.row]
         cell.prepare(with: model)
+    
         return cell
     }
 }

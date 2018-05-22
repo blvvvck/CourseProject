@@ -34,4 +34,8 @@ class SettingsPresenter: SettingsViewOutput, SettingsInteractorOutput {
         view.setSheetName(with: settingsModel.sheetName)
         view.setRange(with: settingsModel.range)
     }
+    
+    func didFinishSaveSetting() {
+        view.dismisToStudent()
+    }
 }

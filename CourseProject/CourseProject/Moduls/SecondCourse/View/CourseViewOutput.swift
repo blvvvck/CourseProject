@@ -11,5 +11,6 @@ import Foundation
 protocol CourseViewOutput {
     
     func viewIsReady(with course: String)
+    func didSelectStudent(with id: Int)
     
 }

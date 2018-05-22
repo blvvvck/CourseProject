@@ -14,7 +14,7 @@ class CourseRouter: CourseRouterInput {
     weak var viewController: UIViewController!
     let detailScreenSegueIdentifier = "showDetailScreen"
     
-    func showDetailScreen(with model: StudentModel) {
-        viewController.performSegue(withIdentifier: detailScreenSegueIdentifier, sender: model)
+    func showDetailScreen(with id: Int) {
+        viewController.performSegue(withIdentifier: detailScreenSegueIdentifier, sender: id)
     }
 }
