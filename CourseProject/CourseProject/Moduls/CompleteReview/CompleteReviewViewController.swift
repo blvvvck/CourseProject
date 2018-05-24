@@ -165,16 +165,16 @@ class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewContro
         let limitationForm1 = document.forms.forms(withName: "limitations1")
         var limitationText1 = firstLimitations.map { String($0)
             }.joined(separator: " ")
-        limitationForm1.first?.value = String(advantagesText1)
+        limitationForm1.first?.value = String(limitationText1)
         
         let limitationForm2 = document.forms.forms(withName: "limitations2")
         var limitationText2 = secondLimitations.map { String($0)
             }.joined(separator: " ")
-        limitationForm2.first?.value = String(advantagesText2)
+        limitationForm2.first?.value = String(limitationText2)
         
         let limitationForm3 = document.forms.forms(withName: "limitations3")
         var limitationText3 = thirdLimitations.map { String($0)}.joined(separator: " ")
-        limitationForm3.first?.value = String(advantagesText3)
+        limitationForm3.first?.value = String(limitationText3)
 
         
         if limitationsCharacters.count <= 50 {
