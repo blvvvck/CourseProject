@@ -213,7 +213,7 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
 
     @IBAction func generate(_ sender: Any) {
         let pdfReview = CompleteReviewViewController()
-        var limitationsText = "5"
+        var limitationsText = "Существенных недостатков в работе выявлено не было"
         var conclusionText = "5"
         var dignityText = "5"
         if limitationHelper == "Не выявлено" {
