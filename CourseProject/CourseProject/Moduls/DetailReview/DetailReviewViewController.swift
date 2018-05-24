@@ -223,11 +223,11 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
         }
         
         if completeMark == "5" {
-            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки \("«")отлично\("»")"
+            conclusionText = "Данная работа заслуживает оценки \("«")отлично\("»")"
         } else if completeMark == "4" {
-            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки \("«")хорошо\("»")"
+            conclusionText = "Данная работа заслуживает оценки \("«")хорошо\("»")"
         } else if completeMark == "3" {
-            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки \("«")удовлетворительно\("»")"
+            conclusionText = "Данная работа заслуживает оценки \("«")удовлетворительно\("»")"
         }
         
         if (independenceRadioButton.isSelected == true && responsibilityRadioButton.isSelected == false && highCompetentionRadioButton.isSelected == false) {
