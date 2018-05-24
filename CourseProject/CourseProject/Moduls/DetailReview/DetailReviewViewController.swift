@@ -43,6 +43,7 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
     var realizationMark = "5"
     var textMark = "5"
     var completeMark = "5"
+    var limitationHelper = ""
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,7 +130,8 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
     
     @IBAction func radioButtonTapped(_ sender: DLRadioButton) {
         if sender.tag == 1 {
-            print("не выявлено")
+            limitationHelper = "Не выявлено"
+            print("Не выявлено")
             textView.isHidden = true
             constraintTextViewToMerk.priority = .defaultLow
             constraintTextViewToOther.priority = .defaultLow
@@ -137,8 +139,9 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
         }
         if sender.tag == 2 {
             print(sender.titleLabel?.text)
-            print("Другео")
+            print("Другое")
             textView.isHidden = false
+            limitationHelper = "Другое"
             
             constraintTextViewToMerk.priority = .defaultHigh
             constraintTextViewToOther.priority = .defaultHigh
@@ -213,16 +216,16 @@ class DetailReviewViewController: UIViewController, ModuleInput, ModuleInputHold
         var limitationsText = "5"
         var conclusionText = "5"
         var dignityText = "5"
-        if radioBtn.titleLabel?.text == "Не выявлено" {
+        if limitationHelper == "Не выявлено" {
             limitationsText = "Существенных недостатков в работе выявлено не было"
-        } else {
+        } else if limitationHelper == "Другое" {
             limitationsText = textView.text
         }
         
         if completeMark == "5" {
             conclusionText = "Данная работа соответствует требованиям и заслуживает оценки \("«")отлично\("»")"
         } else if completeMark == "4" {
-            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки хорошо \("«")хорошо\("»")"
+            conclusionText = "Данная работа соответствует требованиям и заслуживает оценки \("«")хорошо\("»")"
         } else if completeMark == "3" {
             conclusionText = "Данная работа соответствует требованиям и заслуживает оценки \("«")удовлетворительно\("»")"
         }

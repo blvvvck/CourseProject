@@ -97,11 +97,6 @@ class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewContro
             }
         }
 
-        if advantagesCharacters.count <= 50 {
-            let advantagesFrom = document.forms.forms(withName: "advantages1")
-            advantagesFrom.first?.value = reviewModel.dignity
-        }
-
         if advantagesCharacters.count > 125 {
             for element in advantagesArray {
                 if countAdvantages < 50 {
@@ -129,9 +124,65 @@ class CompleteReviewViewController: ILPDFViewController, MFMailComposeViewContro
         let advantagesForm3 = document.forms.forms(withName: "advantages3")
         var advantagesText3 = thirdAdvantages.map { String($0)}.joined(separator: " ")
         advantagesForm3.first?.value = String(advantagesText3)
+        
+        if advantagesCharacters.count <= 50 {
+            let advantagesFrom = document.forms.forms(withName: "advantages1")
+            advantagesFrom.first?.value = reviewModel.dignity
+        }
+        
+        //заполнение недостатков
+        let limitationsCharacters = Array(reviewModel.limitations)
+        let limitationsArray = reviewModel.limitations.split(separator: " ")
+        var firstLimitations  = [""]
+        var secondLimitations = [""]
+        var thirdLimitations = [""]
+        var countLimitations = 0
+        if limitationsCharacters.count > 50 && limitationsCharacters.count <= 125 {
+            for element in limitationsArray {
+                if countLimitations < 50 {
+                    countLimitations += element.count
+                    firstLimitations.append(String(element))
+                } else if countLimitations >= 50 {
+                    secondLimitations.append(String(element))
+                }
+            }
+        }
+        
+        if limitationsCharacters.count > 125 {
+            for element in advantagesArray {
+                if countLimitations < 50 {
+                    countLimitations += element.count
+                    firstLimitations.append(String(element))
+                } else if countLimitations >= 50 && countLimitations < 125 {
+                    countLimitations += element.count
+                    secondLimitations.append(String(element))
+                } else if countLimitations > 125 {
+                    thirdLimitations.append(String(element))
+                }
+            }
+        }
+        
+        let limitationForm1 = document.forms.forms(withName: "limitations1")
+        var limitationText1 = firstLimitations.map { String($0)
+            }.joined(separator: " ")
+        limitationForm1.first?.value = String(advantagesText1)
+        
+        let limitationForm2 = document.forms.forms(withName: "limitations2")
+        var limitationText2 = secondLimitations.map { String($0)
+            }.joined(separator: " ")
+        limitationForm2.first?.value = String(advantagesText2)
+        
+        let limitationForm3 = document.forms.forms(withName: "limitations3")
+        var limitationText3 = thirdLimitations.map { String($0)}.joined(separator: " ")
+        limitationForm3.first?.value = String(advantagesText3)
 
-        let limitationsForm = document.forms.forms(withName: "limitations1")
-        limitationsForm.first?.value = reviewModel.limitations
+        
+        if limitationsCharacters.count <= 50 {
+            let limitationForm = document.forms.forms(withName: "limitations1")
+            limitationForm.first?.value = reviewModel.limitations
+        }
+//        let limitationsForm = document.forms.forms(withName: "limitations1")
+//        limitationsForm.first?.value = reviewModel.limitations
         
         let conclusionForm = document.forms.forms(withName: "conclusion1")
         conclusionForm.first?.value = reviewModel.conclusion
